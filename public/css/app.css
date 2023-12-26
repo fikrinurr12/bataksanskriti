@@ -1,0 +1,7 @@
+#mainNav {
+    background: rgba(0, 0, 0, 0.5);
+    transition: 0.5s;
+}
+#mainNav.scrolled {
+    background-color: rgb(27, 27, 27);
+}

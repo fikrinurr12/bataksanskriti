@@ -1,19 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    @vite(['resources/sass/app.scss','resources/js/app.js'])
-    <title>Batak Sanskriti - Landing Page</title>
-</head>
-<body>
+@extends('layout/landingpage')
+@section('title','Landing Page')
+@section('content')
 
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
-        <div class="container-fluid">
+    <nav class="navbar navbar-expand-sm navbar-dark sticky-top" id="mainNav">
+        <div class="container">
           <a class="navbar-brand" href="#"><img class="rounded-pill" src="{{ asset('assets/logo/logo.png') }}" width="35em" alt=""> BatakSanskriti</a>
         </div>
     </nav>
 
-</body>
-</html>
+    <div class="container">
+        <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum nihil consequatur, quidem tenetur tempora, ullam, fugit dignissimos quae similique velit porro accusantium alias consequuntur amet ipsam asperiores placeat vero nobis.</h1>
+        <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum nihil consequatur, quidem tenetur tempora, ullam, fugit dignissimos quae similique velit porro accusantium alias consequuntur amet ipsam asperiores placeat vero nobis.</h1>
+        <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum nihil consequatur, quidem tenetur tempora, ullam, fugit dignissimos quae similique velit porro accusantium alias consequuntur amet ipsam asperiores placeat vero nobis.</h1>
+        <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum nihil consequatur, quidem tenetur tempora, ullam, fugit dignissimos quae similique velit porro accusantium alias consequuntur amet ipsam asperiores placeat vero nobis.</h1>
+        <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum nihil consequatur, quidem tenetur tempora, ullam, fugit dignissimos quae similique velit porro accusantium alias consequuntur amet ipsam asperiores placeat vero nobis.</h1>
+        <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum nihil consequatur, quidem tenetur tempora, ullam, fugit dignissimos quae similique velit porro accusantium alias consequuntur amet ipsam asperiores placeat vero nobis.</h1>
+        <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum nihil consequatur, quidem tenetur tempora, ullam, fugit dignissimos quae similique velit porro accusantium alias consequuntur amet ipsam asperiores placeat vero nobis.</h1>
+        <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum nihil consequatur, quidem tenetur tempora, ullam, fugit dignissimos quae similique velit porro accusantium alias consequuntur amet ipsam asperiores placeat vero nobis.</h1>
+        <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum nihil consequatur, quidem tenetur tempora, ullam, fugit dignissimos quae similique velit porro accusantium alias consequuntur amet ipsam asperiores placeat vero nobis.</h1>
+    </div>
+
+@endsection
