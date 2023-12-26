@@ -16,6 +16,7 @@
             <div class="card my-5">
     
               <form class="card-body cardbody-color p-lg-5">
+                <a href="{{route('landingpage')}}"><i class="bi bi-arrow-left"></i>Kembali</a>
                 <div class="mb-3">
                   <input type="text" class="form-control" id="Username" placeholder="Username">
                 </div>
