@@ -2,22 +2,23 @@
 @section('title','Landing Page')
 @section('content')
 
-    <nav class="navbar navbar-expand-sm navbar-dark sticky-top" id="mainNav">
-        <div class="container">
-          <a class="navbar-brand" href="#"><img class="rounded-pill" src="{{ asset('assets/logo/logo.png') }}" width="35em" alt=""> BatakSanskriti</a>
+<!-- main start -->
+    <div class="container d-flex align-items-center" style="height: 90vh;">
+        <div class="row">
+          <div class="col-6 d-flex align-items-center">
+            <div>
+              <h1 class="fs-1 fw-bold">
+                Kembangkan Budaya Batak Melalui Digitalisasi Modern Untuk Generasi Penerus Budaya.
+              </h1>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto explicabo distinctio sunt repellat expedita repudiandae porro accusamus accusantium perspiciatis! Necessitatibus debitis quos omnis tempore expedita natus consequuntur porro similique deserunt.</p>
+              <a href="{{ route('login') }}"><button class="btn btn-danger roundpage px-4 py-2 mt-3" id="mainNav">Masuk Sekarang</button></a>
+            </div>
+          </div>
+          <div class="col-6 d-flex align-items-center">
+            <img src="{{ asset('assets/logo/logo.png') }}" class="img-logo ms-auto" alt="">
+          </div>
         </div>
-    </nav>
-
-    <div class="container">
-        <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum nihil consequatur, quidem tenetur tempora, ullam, fugit dignissimos quae similique velit porro accusantium alias consequuntur amet ipsam asperiores placeat vero nobis.</h1>
-        <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum nihil consequatur, quidem tenetur tempora, ullam, fugit dignissimos quae similique velit porro accusantium alias consequuntur amet ipsam asperiores placeat vero nobis.</h1>
-        <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum nihil consequatur, quidem tenetur tempora, ullam, fugit dignissimos quae similique velit porro accusantium alias consequuntur amet ipsam asperiores placeat vero nobis.</h1>
-        <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum nihil consequatur, quidem tenetur tempora, ullam, fugit dignissimos quae similique velit porro accusantium alias consequuntur amet ipsam asperiores placeat vero nobis.</h1>
-        <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum nihil consequatur, quidem tenetur tempora, ullam, fugit dignissimos quae similique velit porro accusantium alias consequuntur amet ipsam asperiores placeat vero nobis.</h1>
-        <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum nihil consequatur, quidem tenetur tempora, ullam, fugit dignissimos quae similique velit porro accusantium alias consequuntur amet ipsam asperiores placeat vero nobis.</h1>
-        <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum nihil consequatur, quidem tenetur tempora, ullam, fugit dignissimos quae similique velit porro accusantium alias consequuntur amet ipsam asperiores placeat vero nobis.</h1>
-        <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum nihil consequatur, quidem tenetur tempora, ullam, fugit dignissimos quae similique velit porro accusantium alias consequuntur amet ipsam asperiores placeat vero nobis.</h1>
-        <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum nihil consequatur, quidem tenetur tempora, ullam, fugit dignissimos quae similique velit porro accusantium alias consequuntur amet ipsam asperiores placeat vero nobis.</h1>
     </div>
+<!-- main end -->
 
 @endsection
