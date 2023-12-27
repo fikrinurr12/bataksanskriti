@@ -1,7 +1,9 @@
 :root {
     --primary: #dc3545;
 }
-
+* {
+    scroll-behavior: smooth;
+}
 /*---- navbar ----  */
 
 #mainNav {
@@ -9,6 +11,7 @@
 }
 #mainNav.scrolled {
     background-color: rgb(27, 27, 27);
+    color: white;
 }
 
 .btn.round {
@@ -20,6 +23,10 @@
 .nav-item.login,
 .nav-item {
     margin: auto;
+}
+
+.rounded-pill.profil:hover {
+    opacity: 0.8;
 }
 
 .active {
@@ -41,5 +48,14 @@
 }
 
 .img-logo {
-    width: 60vh;
+    width: 70vh;
+}
+
+.full-height {
+    height: 100vh;
+}
+
+/*-- about --*/
+#about {
+    background-color: var(--primary);
 }
