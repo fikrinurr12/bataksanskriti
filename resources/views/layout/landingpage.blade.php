@@ -15,7 +15,7 @@
 <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="10">
 
 <!-- navbar start -->
-<nav class="navbar navbar-expand-lg fixed-top navbar-dark" id="mainNav">
+<nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
     <div class="container">
         <a class="navbar-brand" href="{{ route('landingpage') }}">
             <img class="rounded-pill" src="{{ asset('assets/logo/logo.png') }}" width="35em" alt="">
@@ -55,9 +55,10 @@
                         <img class="rounded-pill border border-2 border-danger profil" src="{{ asset('assets/users/1.jpg') }}" width="35em" alt=""> 
                     </a>
                     <ul class="dropdown-menu nav-item login">
-                      <li><a class="dropdown-item profil" href="#">Profil</a></li>
-                      <li><a class="dropdown-item profil" href="#">Leaderboard</a></li><hr>
-                      <li><a class="dropdown-item profil" href="#">Logout</a></li>
+                        <li><a class="dropdown-item profil" href="#">Dashboard</a></li><hr>
+                        <li><a class="dropdown-item profil" href="#">Profil</a></li>
+                        <li><a class="dropdown-item profil" href="#">Leaderboard</a></li><hr>
+                        <li><a class="dropdown-item profil" href="#">Logout</a></li>
                     </ul>
                 </li>
             </ul>
@@ -70,6 +71,51 @@
 <!-- main -->
     @yield('content')
 <!-- main -->
+
+
+<!-- footer -->
+<div id="footer" class="bg-dark text-light pt-5">
+    <footer class="container">
+        <div class="row  pb-2">
+          <!-- About Column -->
+          <div class="col-md-4">
+            <h5>About</h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat reiciendis cupiditate nam ex consequuntur ab consequatur vitae in, molestiae est ullam necessitatibus dolor ut, accusantium explicabo sequi aliquam dolorum dolorem.</p>
+          </div>
+      
+          <!-- List Modul Column -->
+          <div class="col-md-4">
+            <h5 class="text-light">List Modul</h5>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item bg-dark text-light">Modul 1</li>
+                <li class="list-group-item bg-dark text-light">Modul 2</li>
+                <li class="list-group-item bg-dark text-light">Modul 3</li>
+                <li class="list-group-item bg-dark text-light">Modul 4</li>
+                <li class="list-group-item bg-dark text-light">Modul 5</li>
+            </ul>
+          </div>
+      
+          <!-- Contact Column -->
+          <div class="col-md-4">
+            <h5>Contact</h5>
+            <p>Email: example@example.com</p>
+            <p>Phone: +123 456 7890</p>
+            <!-- Add more contact information as needed -->
+          </div>
+        </div>
+      </footer>
+</div>
+<!-- footer -->
+
+<!-- cr -->
+<footer class="more-dark text-light">
+    <div class="container">
+        <div class="row pt-3 pb-3">
+            <b class="text-center">Copyright @2023 By Muhammad Fikri Nursyahbani</b>
+        </div>
+    </div>
+</footer>
+<!-- cr -->
 
 
 <!-- js -->
