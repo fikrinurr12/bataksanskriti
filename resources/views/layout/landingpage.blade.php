@@ -16,7 +16,7 @@
 <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="10">
 
 <!-- navbar start -->
-<nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+<nav class="navbar navbar-expand-lg sticky-top" id="mainNav">
     <div class="container">
         <a class="navbar-brand" href="{{ route('landingpage') }}">
             <img class="rounded-pill" src="{{ asset('assets/logo/logo.png') }}" width="35em" alt="">
@@ -28,23 +28,20 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto gap-4">
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#main">Beranda</a>
+                    <a class="nav-link" aria-current="page" href="{{ route('landingpage') }}#main">Beranda</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#about">Tentang</a>
+                    <a class="nav-link" aria-current="page" href="{{ route('landingpage') }}#about">Tentang</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#event">Event</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#testimoni">Testimoni</a>
+                    <a class="nav-link" aria-current="page" href="{{ route('landingpage') }}#jadwal">Jadwal</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Layanan
                     </a>
                     <ul id="darkDropdown" class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item profil {{ request()->is('/modul/*') ? 'active fw-bold' : ''}}" href="#">Modul</a></li>
+                        <li><a class="dropdown-item profil {{ request()->is('/modul/*') ? 'active fw-bold' : ''}}" href="{{ route('modul') }}">Modul</a></li>
                         <li><a class="dropdown-item profil {{ request()->is('/kuis/*') ? 'active fw-bold' : ''}}" href="#">Kuis</a></li>
                     </ul>
                 </li>
@@ -56,9 +53,8 @@
                         <img class="rounded-pill border border-2 border-danger profil" src="{{ asset('assets/users/1.jpg') }}" width="35em" alt=""> 
                     </a>
                     <ul class="dropdown-menu nav-item login">
-                        <li><a class="dropdown-item profil" href="#">Dashboard</a></li><hr>
-                        <li><a class="dropdown-item profil" href="#">Profil</a></li>
-                        <li><a class="dropdown-item profil" href="#">Leaderboard</a></li><hr>
+                        <li><a class="dropdown-item profil" href="#">Dashboard</a></li>
+                        <li><a class="dropdown-item profil" href="#">Profil</a></li><hr>
                         <li><a class="dropdown-item profil" href="#">Logout</a></li>
                     </ul>
                 </li>

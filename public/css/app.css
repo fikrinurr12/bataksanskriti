@@ -5,6 +5,12 @@
 * {
     scroll-behavior: smooth;
 }
+
+/*-- icon awesome ---*/
+.fa.fa-arrow-left {
+    color: var(--primary) !important;
+}
+
 /*---- navbar ----  */
 
 #mainNav {
@@ -87,22 +93,36 @@
     border-radius: 0px 20px 20px 0px;
 }
 
+.carousel-item:hover img {
+    opacity: 0.9;
+}
+
 /*-- about --*/
 #about {
     background-color: var(--primary);
 }
 
-/*--- testimoni ---*/
-#testimoni {
-    height: 100vh;
-    background-color: var(--primary);
-}
-.card-img-top.comment {
-    width: 150px;
-    height: 150px;
-}
-
 /*-- footer --*/
 .more-dark {
     background-color: #1d1d1d;
+}
+
+/*-- modul --*/
+.fullscreen {
+    height: 100%;
+}
+
+.modul img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.page-link.active,
+.active > .page-link {
+    background-color: var(--primary) !important;
+    border: var(--primary) !important;
+}
+.page-link:not(.active > .page-link) {
+    color: var(--primary) !important;
 }
