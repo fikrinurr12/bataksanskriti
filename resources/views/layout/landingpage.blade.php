@@ -7,6 +7,7 @@
 
     <!-- css & js -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('fontawesome/css/all.min.css') }}">
     @vite(['resources/sass/app.scss','resources/js/app.js'])
     <!-- css & js -->
 
@@ -111,7 +112,7 @@
 <footer class="more-dark text-light">
     <div class="container">
         <div class="row pt-3 pb-3">
-            <b class="text-center">Copyright @2023 By Muhammad Fikri Nursyahbani</b>
+            <b class="text-center">Copyright @2023 By Kelompok 3</b>
         </div>
     </div>
 </footer>
