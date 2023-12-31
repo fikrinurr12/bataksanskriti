@@ -19,11 +19,10 @@
             @include('dashboard.components.sidebar')
           </div>
           <div class="flex-fill margin-left-500 bg-light ps-2">
-            @if(Request::is('dashboard')):
-              @include('dashboard.contents.dashboard')
-            @elseif(Request::is('kuis')):
-              @include('dashboard.contents.kuis.index')
-            @endif
+            @includeWhen(Request::is('kuis'), 'dashboard.contents.kuis.index')
+            @includeWhen(Request::is('modul'), 'dashboard.contents.modul.index')
+            @includeWhen(Request::is('event'), 'dashboard.contents.event.index')
+            @includeWhen(Request::is('dashboard'), 'dashboard.contents.dashboardpage')
           </div>
         </div>
     </main>

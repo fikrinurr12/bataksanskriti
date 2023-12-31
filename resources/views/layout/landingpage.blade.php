@@ -41,8 +41,8 @@
                         Layanan
                     </a>
                     <ul id="darkDropdown" class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item profil {{ request()->is('/modul/*') ? 'active fw-bold' : ''}}" href="{{ route('modul') }}">Modul</a></li>
-                        <li><a class="dropdown-item profil {{ request()->is('/kuis/*') ? 'active fw-bold' : ''}}" href="#">Kuis</a></li>
+                        <li><a class="dropdown-item profil {{ request()->is('/modul-view/*') ? 'active fw-bold' : ''}}" href="{{ route('modul') }}">Modul</a></li>
+                        <li><a class="dropdown-item profil {{ request()->is('/kuis-view/*') ? 'active fw-bold' : ''}}" href="#">Kuis</a></li>
                     </ul>
                 </li>
                 <li class="nav-item login">
