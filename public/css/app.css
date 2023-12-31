@@ -1,6 +1,7 @@
 :root {
     --primary: #dc3545;
     --secondary: #212529;
+    --second-ligth: #d6d6d6;
 }
 * {
     scroll-behavior: smooth;
@@ -144,4 +145,21 @@
 
 .margin-left-500{
     margin-left: 300px;
+}
+
+.bg-main{
+    background-color: var(--primary);
+}
+
+.text-main{
+    color: var(--primary);
+}
+
+.bg-second-light{
+    background-color: var(--second-ligth);
+}
+
+.padding-x{
+    padding-left: 80px;
+    padding-right: 80px;
 }
