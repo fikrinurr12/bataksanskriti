@@ -15,7 +15,9 @@
     </header>
     <main>
         <div class="d-flex top">
-          @include('dashboard.components.sidebar')
+          <div class="fixed width-10 p-2">    
+            @include('dashboard.components.sidebar')
+          </div>
           <div class="flex-fill margin-left-500 bg-light ps-2">
             @if(Request::is('dashboard')):
               @include('dashboard.contents.dashboard')

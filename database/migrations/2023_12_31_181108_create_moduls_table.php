@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('moduls', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
-            $table->string('gambar', 100);
-            $table->string('nama_modul', 50);
+            $table->string('gambar');
+            $table->string('nama_modul');
             $table->text('deskripsi');
             $table->timestamps();
         });

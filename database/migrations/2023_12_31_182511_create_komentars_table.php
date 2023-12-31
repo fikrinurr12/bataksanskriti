@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id');
             $table->foreignId('id_modul');
-            $table->string('komentar', 255);
+            $table->string('komentar');
             $table->timestamps();
         });
     }

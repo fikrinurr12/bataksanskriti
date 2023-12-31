@@ -23,8 +23,15 @@ Route::get('/modul/content',[LandingPageController::class, 'content'])->name('is
 
 Route::get('/jadwal',[LandingPageController::class, 'jadwal'])->name('jadwal');
 
+// authentication
 Route::get('/login',[LoginController::class, 'index'])->name('login');
+Route::post('/login', [LoginController::class, 'login'])->name('login');
 Route::get('/register',[RegisterController::class, 'index'])->name('register');
+Route::post('/register', [RegisterController::class, 'register'])->name('register');
 
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+// Route::resource('/dashboard/kuis', [KuisController::class]);
+// Route::resource('/dashboard/modul', [ModulController::class]);
+// Route::resource('/dashboard/event', [EventController::class]);
