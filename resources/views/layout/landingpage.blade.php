@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- css & js -->
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <link rel="stylesheet" href="{{ asset('fontawesome/css/all.min.css') }}">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
     @vite(['resources/sass/app.scss','resources/js/app.js'])
     <!-- css & js -->
 

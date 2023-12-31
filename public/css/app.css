@@ -4,6 +4,9 @@
 }
 * {
     scroll-behavior: smooth;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 /*-- icon awesome ---*/
@@ -125,4 +128,20 @@
 }
 .page-link:not(.active > .page-link) {
     color: var(--primary) !important;
+}
+
+.top{
+    margin-top: 100px;
+}
+
+.width-10{
+    width: 300px;
+}
+
+.max-height-5{
+    max-height: 500px;
+}
+
+.margin-left-500{
+    margin-left: 300px;
 }
