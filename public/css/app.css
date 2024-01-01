@@ -130,36 +130,3 @@
 .page-link:not(.active > .page-link) {
     color: var(--primary) !important;
 }
-
-.top{
-    margin-top: 100px;
-}
-
-.width-10{
-    width: 300px;
-}
-
-.max-height-5{
-    max-height: 500px;
-}
-
-.margin-left-500{
-    margin-left: 300px;
-}
-
-.bg-main{
-    background-color: var(--primary);
-}
-
-.text-main{
-    color: var(--primary);
-}
-
-.bg-second-light{
-    background-color: var(--second-ligth);
-}
-
-.padding-x{
-    padding-left: 80px;
-    padding-right: 80px;
-}

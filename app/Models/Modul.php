@@ -11,6 +11,13 @@ use Illuminate\Database\Eloquent\Model;
 class Modul extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'user_id',
+        'nama_modul',
+        'gambar',
+        'deskripsi'
+    ];
+
     public function kuis(){
         return $this->hasMany(Kuis::class);
     }

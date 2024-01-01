@@ -11,6 +11,9 @@
         <form class="card-body cardbody-color p-lg-5" method="post" action="/register">
           @csrf
           <div class="mb-3">
+            <input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap" placeholder="Contoh: John Doe" required>            
+          </div>
+          <div class="mb-3">
             <input type="email" class="form-control" id="email" name="email" placeholder="Contoh: Johndoe@gmail.com" required>            
           </div>
           <div class="mb-3">
