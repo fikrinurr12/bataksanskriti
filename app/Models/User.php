@@ -3,10 +3,16 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Models\Kuis;
+use App\Models\Komentar;
+use App\Models\Modul;
+use App\Models\Event;
+use App\Models\Skor;
+use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
@@ -42,4 +48,24 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function modul(){
+        return $this->hasMany(Modul::class);
+    }
+
+    public function komentar(){
+        return $this->hasMany(Komentar::class);
+    }
+
+    public function kuis(){
+        return $this->hasMany(Kuis::class);
+    }
+
+    public function event(){
+        return $this->hasMany(Event::class);
+    }
+
+    public function skor(){
+        return $this->hasMany(Skor::class);
+    }
 }
