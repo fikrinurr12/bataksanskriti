@@ -18,7 +18,7 @@
                             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis ex veniam alias odio ipsum reprehenderit labore architecto inventore magni, natus voluptatem rerum. Placeat quibusdam non exercitationem amet rem eius repellat!</p>
                         </div>
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                            <a href="#">
+                            <a href="{{ route('isi_jadwal') }}">
                                 <button class="btn btn-danger" type="button">Lihat Selengkapnya</button></a>    
                         </div>
                     </div>
@@ -33,7 +33,7 @@
                             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis ex veniam alias odio ipsum reprehenderit labore architecto inventore magni, natus voluptatem rerum. Placeat quibusdam non exercitationem amet rem eius repellat!</p>
                         </div>
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                            <a href="#">
+                            <a href="{{ route('isi_jadwal') }}">
                                 <button class="btn btn-danger" type="button">Lihat Selengkapnya</button></a>    
                         </div>
                     </div>
@@ -48,7 +48,7 @@
                             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis ex veniam alias odio ipsum reprehenderit labore architecto inventore magni, natus voluptatem rerum. Placeat quibusdam non exercitationem amet rem eius repellat!</p>
                         </div>
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                            <a href="#">
+                            <a href="{{ route('isi_jadwal') }}">
                                 <button class="btn btn-danger" type="button">Lihat Selengkapnya</button></a>    
                         </div>
                     </div>
@@ -63,7 +63,7 @@
                             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis ex veniam alias odio ipsum reprehenderit labore architecto inventore magni, natus voluptatem rerum. Placeat quibusdam non exercitationem amet rem eius repellat!</p>
                         </div>
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                            <a href="#">
+                            <a href="{{ route('isi_jadwal') }}">
                                 <button class="btn btn-danger" type="button">Lihat Selengkapnya</button></a>    
                         </div>
                     </div>
@@ -78,7 +78,7 @@
                             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis ex veniam alias odio ipsum reprehenderit labore architecto inventore magni, natus voluptatem rerum. Placeat quibusdam non exercitationem amet rem eius repellat!</p>
                         </div>
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                            <a href="#">
+                            <a href="{{ route('isi_jadwal') }}">
                                 <button class="btn btn-danger" type="button">Lihat Selengkapnya</button></a>    
                         </div>
                     </div>

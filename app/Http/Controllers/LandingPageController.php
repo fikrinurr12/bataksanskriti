@@ -14,11 +14,15 @@ class LandingPageController extends Controller
         return view('modul.index');
     }
 
-    public function content(){
+    public function content_modul(){
         return view('modul.content');
     }
 
     public function jadwal(){
         return view('jadwal.index');
+    }
+
+    public function content_jadwal(){
+        return view('jadwal.content');
     }
 }

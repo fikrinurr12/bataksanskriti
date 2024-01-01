@@ -130,3 +130,9 @@
 .page-link:not(.active > .page-link) {
     color: var(--primary) !important;
 }
+
+/*--- komentar ---*/
+.komentar img {
+    width: 40px;
+    height: 40px;
+}
