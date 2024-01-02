@@ -20,15 +20,18 @@ use App\Http\Controllers\LandingPageController;
 |
 */
 
-Route::get('/',[LandingPageController::class, 'index'])->name('landingpage');
+Route::get('/', [LandingPageController::class, 'index'])->name('landingpage');
 Route::get('/modul-view',[LandingPageController::class, 'modul'])->name('modul');
-Route::get('/modul-view/content',[LandingPageController::class, 'content_modul'])->name('isi_modul');
+Route::get('/modul-view/details',[LandingPageController::class, 'content_modul'])->name('isi_modul');
 
-Route::get('/jadwal',[LandingPageController::class, 'jadwal'])->name('jadwal');
-Route::get('/jadwal/content',[LandingPageController::class, 'content_jadwal'])->name('isi_jadwal');
 
-Route::get('/dashboard', [DashboardController::class, 'index']);
+Route::get('/event-view',[LandingPageController::class, 'jadwal'])->name('jadwal');
+Route::get('/event-view/details',[LandingPageController::class, 'content_jadwal'])->name('isi_jadwal');
 
+
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+// authentication
 Route::get('/login',[LoginController::class, 'index'])->name('login');
 Route::post('/login',[LoginController::class, 'login'])->name('login');
 Route::get('/register',[RegisterController::class, 'index'])->name('register');
@@ -37,3 +40,4 @@ Route::get('/post',[RegisterController::class, 'register'])->name('register');
 Route::resource('/modul', ModulController::class);
 Route::resource('/kuis', KuisController::class);
 Route::resource('/event', EventController::class);
+
