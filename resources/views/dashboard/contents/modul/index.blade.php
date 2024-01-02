@@ -23,7 +23,7 @@
           <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#{{'hapus-'.$data->id}}">
             Hapus
           </button>
-          <a href="" class="d-flex align-items-center justify-content-center py-1 bg-main rounded text-white text-decoration-none text-center">Buat Kuis</a>          
+          <a href="/kuis/create/{{$data->id}}" class="d-flex align-items-center justify-content-center py-1 bg-main rounded text-white text-decoration-none text-center">Buat Kuis</a>          
         </div>
       </div>
     </div>        
@@ -79,7 +79,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <h3>Yakin ingin menghapus {{$data->nama_modul}} ?</h3>
+            <h5>Yakin ingin menghapus {{$data->nama_modul}} ?</h5>
           </div>
           <div class="modal-footer">
             <form action="/modul/{{$data->id}}" method="post">

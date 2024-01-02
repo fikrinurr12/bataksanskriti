@@ -5,8 +5,12 @@
       <h5 class="card-header">Kuis</h5>
       <div class="card-body">
         <h5 class="card-title">Kuis {{$data->nama_modul}}</h5>
-        <p class="card-text">{{count($data->kuis->toArray()) != 0 ? 'Terdapat '.count($data->kuis->toArray()).' Kuis yang bisa dikerjakan' : 'Tidak ada kuis di modul ini'}}</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <p class="card-text">{{count($data->kuis->toArray()) != 0 ? 'Terdapat '.count($data->kuis->toArray()).' Kuis yang bisa dikerjakan' : 'Tidak ada kuis di modul ini'}}</p>        
+        @php
+          $url = '/kuis/lists/'.$data->id;
+        @endphp
+        {!! count($data->kuis->toArray()) != 0 ? "<a href=$url class='btn btn-primary'>List Kuis</a>" : '' !!}
+        <a href="/kuis/lists/{{$data->id}}" class="btn btn-primary">List Kuis</a>       
       </div>
     </div>
   </div>

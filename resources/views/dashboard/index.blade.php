@@ -100,12 +100,14 @@
             @include('dashboard.components.sidebar')
           </div>
           <div class="flex-fill margin-left-300 bg-light mb-3">
-            @includeWhen(Request::is('kuis'), 'dashboard.contents.kuis.index')
             @includeWhen(Request::is('modul'), 'dashboard.contents.modul.index')
             @includeWhen(Request::is('modul/create'), 'dashboard.contents.modul.create')
             @if($data)
-              @includeWhen(Request::is('modul/'.$data->id.'/edit'), 'dashboard.contents.modul.edit')
-            @endif            
+            @includeWhen(Request::is('modul/'.$data->id.'/edit'), 'dashboard.contents.modul.edit')
+            @endif
+            @includeWhen(Request::is('kuis'), 'dashboard.contents.kuis.index')
+            @includeWhen(Request::is('kuis/create*'), 'dashboard.contents.kuis.create')
+            @includeWhen(Request::is('kuis/lists*'), 'dashboard.contents.kuis.lists')            
             @includeWhen(Request::is('event'), 'dashboard.contents.event.index')
             @includeWhen(Request::is('dashboard'), 'dashboard.contents.dashboardpage')
           </div>
