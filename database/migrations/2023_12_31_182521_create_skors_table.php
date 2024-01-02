@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('skors', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
-            $table->foreignId('id_kuis');
+            $table->foreignId('kuis_id');
             $table->integer('poin');
             $table->timestamps();
         });
