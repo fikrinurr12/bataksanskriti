@@ -55,7 +55,7 @@
     <div class="row mb-5">
       <div id="cardSlider" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner mt-5">
-          <a href="{{ route('jadwal') }}">
+          <a href="{{ route('isi_jadwal') }}">
             <div class="carousel-item active">
               <div class="card mini-card mx-auto">
                 <!-- Mini card content for the first carousel item -->
@@ -67,7 +67,7 @@
               </div>
             </div>
           </a>
-          <a href="{{ route('jadwal') }}">
+          <a href="{{ route('isi_jadwal') }}">
             <div class="carousel-item">
               <div class="card mini-card mx-auto">
                 <!-- Mini card content for the second carousel item -->
@@ -79,7 +79,7 @@
               </div>
             </div>
           </a>
-          <a href="{{ route('jadwal') }}">
+          <a href="{{ route('isi_jadwal') }}">
             <div class="carousel-item">
               <div class="card mini-card mx-auto">
                 <!-- Mini card content for the third carousel item -->
