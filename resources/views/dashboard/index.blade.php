@@ -26,7 +26,7 @@
           max-height: 500px;
       }
 
-      .margin-left-500{
+      .margin-left-300{
           margin-left: 300px;
       }
 
@@ -48,8 +48,44 @@
       }
 
       .max-height-200{
-        max-height: 200px;
+        max-height: 150px;
         object-fit: cover;
+      }
+
+      .grid-button{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+        gap: 5px;
+      }
+
+      .sidebar{
+        display: block;
+      }
+
+      .navbar-responsive{
+        display: none
+      }
+
+      .title-responsive{
+        display: block;
+      }
+
+      @media screen and (max-width: 670px){
+        .sidebar{
+          display: none
+        }
+
+        .margin-left-300{
+          margin-left: 0;
+        }
+
+        .navbar-responsive{
+          display: block;
+        }
+
+        .title-responsive{
+          display: none;
+        }
       }
     </style>
     <title>Title</title>
@@ -60,13 +96,16 @@
     </header>
     <main>
         <div class="d-flex top">
-          <div class="fixed width-10 p-2">    
+          <div class="fixed width-10 p-2 sidebar">    
             @include('dashboard.components.sidebar')
           </div>
-          <div class="flex-fill margin-left-500 bg-light ps-2">
+          <div class="flex-fill margin-left-300 bg-light ps-2">
             @includeWhen(Request::is('kuis'), 'dashboard.contents.kuis.index')
             @includeWhen(Request::is('modul'), 'dashboard.contents.modul.index')
             @includeWhen(Request::is('modul/create'), 'dashboard.contents.modul.create')
+            @if($data)
+              @includeWhen(Request::is('modul/'.$data->id.'/edit'), 'dashboard.contents.modul.edit')
+            @endif            
             @includeWhen(Request::is('event'), 'dashboard.contents.event.index')
             @includeWhen(Request::is('dashboard'), 'dashboard.contents.dashboardpage')
           </div>
