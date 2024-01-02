@@ -2,7 +2,7 @@
 @section('title', 'Kuis')
 @section('content')
 
-<div id="modul">
+<div id="kuis">
     <div class="container fullscreen pt-5 pb-5">
         <div class="row">
             <div class="modul col-12">

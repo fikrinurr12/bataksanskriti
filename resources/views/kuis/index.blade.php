@@ -11,7 +11,7 @@
                 
                 <div class="row mb-5 row-cols-1 row-cols-md-4 g-4">
                     <div class="col">
-                        <div class="card col pt-3 h-100">
+                        <div class="card col pt-3 h-100 kuis">
                             <div class="container-fluid">
                                 <img src="{{ asset('assets/img/event3.jpg') }}" class="card-img-top cover-kuis" alt="...">
                             </div>
@@ -23,7 +23,7 @@
                           </div>
                     </div>
                     <div class="col">
-                        <div class="card col pt-3 h-100">
+                        <div class="card col pt-3 h-100 kuis">
                             <div class="container-fluid">
                                 <img src="{{ asset('assets/img/event1.jpg') }}" class="card-img-top cover-kuis" alt="...">
                             </div>
@@ -35,7 +35,7 @@
                           </div>
                     </div>
                     <div class="col">
-                        <div class="card col pt-3 h-100">
+                        <div class="card col pt-3 h-100 kuis">
                             <div class="container-fluid">
                                 <img src="{{ asset('assets/img/event2.png') }}" class="card-img-top cover-kuis" alt="...">
                             </div>
@@ -47,7 +47,7 @@
                           </div>
                     </div>
                     <div class="col">
-                        <div class="card col pt-3 h-100">
+                        <div class="card col pt-3 h-100 kuis">
                             <div class="container-fluid">
                                 <img src="{{ asset('assets/img/event3.jpg') }}" class="card-img-top cover-kuis" alt="...">
                             </div>

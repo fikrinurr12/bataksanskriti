@@ -5,7 +5,7 @@
 <div id="kuis">
     <div class="container fullscreen pt-5 pb-5">
         <div class="row">
-            <h2><a class="fw-med text-black" href="{{ route('modul') }}"><i class="fa fa-arrow-left" aria-hidden="true"></i></a> Kuis Budaya Batak</h2><hr>
+            <h2><a class="fw-med text-black" href="{{ route('kuis') }}"><i class="fa fa-arrow-left" aria-hidden="true"></i></a> Kuis 1</h2><hr>
                 <!--- batas -->
                 <form action="{{ route('hasil_kuis') }}">
                     <div class="row kuis mb-5">
