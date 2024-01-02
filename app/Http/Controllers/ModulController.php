@@ -43,7 +43,7 @@ class ModulController extends Controller
         $validateData = $request->validate([
             'nama_modul' => 'required|min:5|max:50',
             'gambar' => 'required|file|image|max:10024',
-            'deskripsi' => 'required|min:10|max:255'
+            'deskripsi' => 'required|min:10|max:1000'
         ]);                
 
         if($request->file('gambar')){
@@ -89,7 +89,7 @@ class ModulController extends Controller
             $validateData = $request->validate([
                 'nama_modul' => ['required','min:5','max:50'],
                 'gambar' => ['required', 'file', 'image', 'max:10024'],
-                'deskripsi' => ['required','min:10','max:255'],     
+                'deskripsi' => ['required','min:10','max:1000'],     
             ]);
     
             $modul->update([
@@ -101,7 +101,7 @@ class ModulController extends Controller
         else{
             $validateData = $request->validate([
                 'nama_modul' => ['required','min:5','max:50'],                
-                'deskripsi' => ['required','min:10','max:255'],     
+                'deskripsi' => ['required','min:10','max:1000'],     
             ]);
     
             $modul->update([

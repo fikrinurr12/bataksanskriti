@@ -59,8 +59,9 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <img src="storage/{{$data->gambar}}" class="img-fluid" alt="...">      
-            <p>{{$data->deskripsi}}</p>      
+            <img src="storage/{{$data->gambar}}" class="img-fluid" alt="...">
+            <h5 class="my-3">Author: {{$data->user->nama_lengkap}}</h5>
+            <p class="my-2">{{$data->deskripsi}}</p>      
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>            

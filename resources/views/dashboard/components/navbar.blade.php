@@ -17,26 +17,26 @@
         <div class="bg-light p-4 d-flex flex-row">
             @if(auth()->user()->role == 'admin')
                 <div class="p-2">
-                    <a href="/dashboard" class="text-dark">Dashboard</a>
+                    <a href="/dashboard" class="{{Request::is('dashboard') ? 'text-main' : 'text-dark'}}">Dashboard</a>
                 </div>            
                 <div class="p-2">
-                    <a href="/modul" class="text-dark">Modul</a>
+                    <a href="/modul" class="{{Request::is('modul*') ? 'text-main' : 'text-dark'}}">Modul</a>
                 </div>            
                 <div class="p-2">
-                    <a href="/kuis" class="text-dark">Kuis</a>
+                    <a href="/kuis" class="{{Request::is('kuis*') ? 'text-main' : 'text-dark'}}">Kuis</a>
                 </div>            
                 <div class="p-2">
-                    <a href="/event" class="text-dark">Event</a>
+                    <a href="/event" class="{{Request::is('event*') ? 'text-main' : 'text-dark'}}">Event</a>
                 </div>
             @else
                 <div class="p-2">
-                    <a href="/dashboard" class="text-dark">Dashboard</a>
+                    <a href="/dashboard" class="{{Request::is('dashboard') ? 'text-main' : 'text-dark'}}">Dashboard</a>
                 </div>            
                 <div class="p-2">
-                    <a href="/modul" class="text-dark">Modul</a>
+                    <a href="/modul" class="{{Request::is('modul*') ? 'text-main' : 'text-dark'}}">Modul</a>
                 </div>            
                 <div class="p-2">
-                    <a href="/kuis" class="text-dark">Kuis</a>
+                    <a href="/kuis" class="{{Request::is('kuis*') ? 'text-main' : 'text-dark'}}">Kuis</a>
                 </div>
             @endif        
         </div>

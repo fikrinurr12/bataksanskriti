@@ -27,7 +27,7 @@
       }
 
       .margin-left-300{
-          margin-left: 300px;
+          margin-left: 315px;
       }
 
       .bg-main{
@@ -76,7 +76,7 @@
         }
 
         .margin-left-300{
-          margin-left: 0;
+          margin-left: 15px;
         }
 
         .navbar-responsive{
@@ -99,7 +99,7 @@
           <div class="fixed width-10 p-2 sidebar">    
             @include('dashboard.components.sidebar')
           </div>
-          <div class="flex-fill margin-left-300 bg-light ps-2">
+          <div class="flex-fill margin-left-300 bg-light mb-3">
             @includeWhen(Request::is('kuis'), 'dashboard.contents.kuis.index')
             @includeWhen(Request::is('modul'), 'dashboard.contents.modul.index')
             @includeWhen(Request::is('modul/create'), 'dashboard.contents.modul.create')

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Kuis;
+use App\Models\Modul;
 use Illuminate\Http\Request;
 
 class KuisController extends Controller
@@ -14,7 +15,8 @@ class KuisController extends Controller
     {
         //
         return view('dashboard.index', [
-            'data' => null
+            'data' => null,
+            'datas' => Modul::get()
         ]);
     }
 
