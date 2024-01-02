@@ -7,6 +7,7 @@
         <div class="row">
             <div class="modul col-12">
                 <h3 class="mb-4"><a href="{{ route('landingpage') }}"><i class="fa fa-arrow-left" aria-hidden="true"></i></a> Kuis Budaya<hr></h3>
+                @auth
                 <!--- batas -->
                 
                 <div class="row mb-5 row-cols-1 row-cols-md-4 g-4">
@@ -74,6 +75,13 @@
                       </li>
                     </ul>
                 </nav>
+                @endauth
+
+                @guest
+                <div class="row mt-5 mb-5">
+                  <h1 class="text-center">Login Terlebih Dahulu!</h1>
+                </div>
+                @endguest
             </div>
         </div>
     </div>

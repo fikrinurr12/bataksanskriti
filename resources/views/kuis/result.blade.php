@@ -8,7 +8,7 @@
             <div class="modul col-12">
                 <h3 class="mb-4"><a href="{{ route('landingpage') }}"><i class="fa fa-arrow-left" aria-hidden="true"></i></a> Kuis Budaya<hr></h3>
                 <!--- batas -->
-
+                @auth
                 <h1 class="text-center">Skor Anda : <b>100/100</b></h1>
                 <h3 class="mt-3">Kerjakan Kuis Lainnya :</h3>
                 
@@ -77,6 +77,13 @@
                       </li>
                     </ul>
                 </nav>
+                @endauth
+
+                @guest
+                <div class="row mt-5 mb-5">
+                  <h1 class="text-center">Login Terlebih Dahulu!</h1>
+                </div>
+                @endguest
             </div>
         </div>
     </div>

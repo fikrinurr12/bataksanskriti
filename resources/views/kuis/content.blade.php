@@ -6,7 +6,8 @@
     <div class="container fullscreen pt-5 pb-5">
         <div class="row">
             <h2><a class="fw-med text-black" href="{{ route('kuis') }}"><i class="fa fa-arrow-left" aria-hidden="true"></i></a> Kuis 1</h2><hr>
-                <!--- batas -->
+                @auth    
+            <!--- batas -->
                 <form action="{{ route('hasil_kuis') }}">
                     <div class="row kuis mb-5">
                         <p>1. Dari mana bika ambon berasal?</p>
@@ -95,6 +96,13 @@
                     <button type="submit" class="btn btn-danger">Submit Jawaban</button>
                 </form>
                 <!--- batas -->
+                @endauth
+                
+                @guest
+                <div class="row mt-5 mb-5">
+                  <h1 class="text-center">Login Terlebih Dahulu!</h1>
+                </div>
+                @endguest
         </div>
     </div>
 </div>
