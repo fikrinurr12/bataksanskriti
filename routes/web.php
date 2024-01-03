@@ -45,6 +45,9 @@ Route::controller(KuisController::class)->group(function (){
     Route::get('/kuis', 'index');
     Route::get('/kuis/create/{modul:id}', 'create');
     Route::post('/kuis/store', 'store');
+    Route::get('/kuis/edit/{kuis:id}', 'edit');
+    Route::put('/kuis/update/{kuis:id}', 'update');
+    Route::delete('/kuis/{kuis:id}', 'destroy');
 });
 
 Route::get('/kuis/lists/{id:id}', [KuisListsController::class, 'index']);

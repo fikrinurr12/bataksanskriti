@@ -108,6 +108,7 @@
             @includeWhen(Request::is('kuis'), 'dashboard.contents.kuis.index')
             @includeWhen(Request::is('kuis/create*'), 'dashboard.contents.kuis.create')
             @includeWhen(Request::is('kuis/lists*'), 'dashboard.contents.kuis.lists')            
+            @includeWhen(Request::is('kuis/edit*'), 'dashboard.contents.kuis.edit')
             @includeWhen(Request::is('event'), 'dashboard.contents.event.index')
             @includeWhen(Request::is('dashboard'), 'dashboard.contents.dashboardpage')
           </div>

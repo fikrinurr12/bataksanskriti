@@ -12,7 +12,7 @@
               $target = '#detail-'.$data->id
             @endphp
             {!! strlen($data->deskripsi) > 20 ? 
-            substr($data->deskripsi,0,20) . "<button type='button' class='text-primary' data-bs-toggle='modal' data-bs-target='$target'>...Lihat Selengkapnya</button>": $data->deskripsi !!}
+            substr($data->deskripsi,0,20) . "<button type='button' style='border: none; background-color: none;' class='text-primary bg-transparent' data-bs-toggle='modal' data-bs-target='$target'>...Lihat Selengkapnya</button>": $data->deskripsi !!}
           </p>
         </div>
         <div class="grid-button px-3 py-3">
