@@ -43,12 +43,15 @@
                     </a>
                     <ul id="darkDropdown" class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item profil {{ request()->is('/modul-view/*') ? 'active fw-bold' : ''}}" href="{{ route('modul') }}">Modul</a></li>
-                        <li><a class="dropdown-item profil {{ request()->is('/kuis-view/*') ? 'active fw-bold' : ''}}" href="#">Kuis</a></li>
+                        <li><a class="dropdown-item profil {{ request()->is('/kuis-view/*') ? 'active fw-bold' : ''}}" href="{{ route('kuis') }}">Kuis</a></li>
                     </ul>
                 </li>
+                @guest
                 <li class="nav-item login">
                     <a class="btn btn-danger round" href="{{ route('login') }}">Login</a>
                 </li>
+                @endguest
+                @auth
                 <li class="nav-item dropdown">
                     <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <img class="rounded-pill border border-2 border-danger profil" src="{{ asset('assets/users/1.jpg') }}" width="35em" alt=""> 
@@ -58,7 +61,8 @@
                         <li><a class="dropdown-item profil" href="#">Profil</a></li><hr>
                         <li><a class="dropdown-item profil" href="#">Logout</a></li>
                     </ul>
-                </li>
+                </li>    
+                @endauth
             </ul>
         </div>
     </div>

@@ -25,4 +25,16 @@ class LandingPageController extends Controller
     public function content_jadwal(){
         return view('jadwal.content');
     }
+
+    public function kuis(){
+        return view('kuis.index');
+    }
+
+    public function content_kuis(){
+        return view('kuis.content');
+    }
+
+    public function hasil_kuis(){
+        return view('kuis.result');
+    }
 }

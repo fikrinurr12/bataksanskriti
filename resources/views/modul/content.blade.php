@@ -13,9 +13,13 @@
                 <div class="row pt-3">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius nisi illo consequuntur illum, sunt quia? Incidunt quo esse distinctio dicta fugit tempora deleniti itaque soluta, placeat blanditiis eveniet ducimus fuga.Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius nisi illo consequuntur illum, sunt quia? Incidunt quo esse distinctio dicta fugit tempora deleniti itaque soluta, placeat blanditiis eveniet ducimus fuga.Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius nisi illo consequuntur illum, sunt quia? Incidunt quo esse distinctio dicta fugit tempora deleniti itaque soluta, placeat blanditiis eveniet ducimus fuga.Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius nisi illo consequuntur illum, sunt quia? Incidunt quo esse distinctio dicta fugit tempora deleniti itaque soluta, placeat blanditiis eveniet ducimus fuga.</p>
                 </div>
+                <div class="row pt-3">
+                    <a href="{{ route('isi_kuis') }}"><button class="btn btn-danger">Kerjakan Kuis</button></a>
+                </div>
 
                 <!-- komentar -->
                 <hr>
+                @auth
                 <h5 class="pb-2">Tinggalkan Komentar.</h5>
                 <form class="komentar pb-5">
                     <div class="row">
@@ -30,6 +34,10 @@
                       </div>
                     </div>
                 </form>
+                @endauth
+                @guest
+                    <h5 class="pb-5">Login Terlebih Dahulu untuk Berkomentar!</h5>
+                @endguest
 
                 <h5>Komentar Pengguna :</h5>
                 <div class="komentar mt-3">
