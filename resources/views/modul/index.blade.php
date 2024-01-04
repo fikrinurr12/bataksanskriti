@@ -11,7 +11,7 @@
                 @foreach ($data as $d)
                 <div class="row mb-5">
                     <div class="col-4">
-                        <img src="{{ asset('assets/img/event1.jpg') }}" alt="">
+                        <img src="{{ asset('storage') }}/{{$d->gambar}}" alt="">
                     </div>
                     <div class="col-8">
                         <div class="row">

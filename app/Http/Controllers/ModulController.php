@@ -47,7 +47,7 @@ class ModulController extends Controller
         ]);                
 
         if($request->file('gambar')){
-            $validateData['gambar'] = $request->file('gambar')->store('modul');
+            $validateData['gambar'] = $request->file('gambar')->store('assets/modul','public');
         }
 
         Modul::create([

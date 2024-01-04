@@ -19,7 +19,7 @@
           <div class="mb-3">
             <input type="Password" class="form-control" id="password" name="password" placeholder="Password">
           </div>
-          <div class="text-center"><button type="submit" class="btn btn-primary px-5 mb-5 w-100">Registrasi</button></div>
+          <div class="text-center"><button type="submit" class="btn btn-danger px-5 mb-5 w-100">Registrasi</button></div>
           <div id="emailHelp" class="form-text text-center mb-5 text-dark">Sudah Punya Akun? <a href="{{ route('login') }}" class="text-dark fw-bold"> Login Sekarang</a>
           </div>
         </form>

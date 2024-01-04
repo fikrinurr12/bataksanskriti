@@ -6,9 +6,9 @@
     <div class="container fullscreen pt-5 pb-5">
         <div class="row">
             <h2><a class="fw-med text-black" href="{{ route('modul') }}"><i class="fa fa-arrow-left" aria-hidden="true"></i></a> {{ $data->nama_modul }}</h2><hr>
-            <div class="modul col-8">
+            <div class="modul-content col-8">
                 <div class="row">
-                    <img src="{{ asset('assets/img/event3.jpg') }}" alt="">
+                    <img src="{{ asset('storage') }}/{{ $data->gambar }}" alt="">
                 </div>
                 <div class="row pt-3">
                     <p>{{ $data->deskripsi }}</p>
@@ -83,13 +83,13 @@
                 </div>
                 <!-- komentar -->
             </div>
-            <div class="modul col-4">
+            <div class="modul-sidebar col-4">
                 
                 <!--- batas -->
                 @foreach($sidebar as $s)
                 <div class="row mb-5">
                     <div class="col-4">
-                        <img src="{{ asset('assets/img/event1.jpg') }}" alt="">
+                        <img src="{{ asset('storage') }}/{{ $s->gambar }}" alt="">
                     </div>
                     <div class="col-8">
                         <div class="row">
