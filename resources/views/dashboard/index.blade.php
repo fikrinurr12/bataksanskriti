@@ -107,22 +107,28 @@
         @include('dashboard.components.navbar')
     </header>
     <main>
-        <div class="d-flex top max-height-fill">
-          <div class="fixed width-10 p-2 sidebar">    
-            @include('dashboard.components.sidebar')
-          </div>
-          <div class="flex-fill margin-left-300 bg-light mb-3 bg bg-primary">
-            @includeWhen(Request::is('modul'), 'dashboard.contents.modul.index')
-            @includeWhen(Request::is('modul/create'), 'dashboard.contents.modul.create')
-            @if($data)
-            @includeWhen(Request::is('modul/'.$data->id.'/edit'), 'dashboard.contents.modul.edit')
-            @endif
-            @includeWhen(Request::is('kuis'), 'dashboard.contents.kuis.index')
-            @includeWhen(Request::is('kuis/create*'), 'dashboard.contents.kuis.create')
-            @includeWhen(Request::is('kuis/lists*'), 'dashboard.contents.kuis.lists')            
-            @includeWhen(Request::is('kuis/edit*'), 'dashboard.contents.kuis.edit')
-            @includeWhen(Request::is('event'), 'dashboard.contents.event.index')
-            @includeWhen(Request::is('dashboard'), 'dashboard.contents.dashboardpage')
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-3">
+              <div class="fixed width-10 p-2 sidebar">    
+                @include('dashboard.components.sidebar')
+              </div>
+            </div>
+            <div class="col-9 pt-2">
+              <div class="container bg-light mb-3 bg bg-primary">
+                @includeWhen(Request::is('modul'), 'dashboard.contents.modul.index')
+                @includeWhen(Request::is('modul/create'), 'dashboard.contents.modul.create')
+                @if($data)
+                @includeWhen(Request::is('modul/'.$data->id.'/edit'), 'dashboard.contents.modul.edit')
+                @endif
+                @includeWhen(Request::is('kuis'), 'dashboard.contents.kuis.index')
+                @includeWhen(Request::is('kuis/create*'), 'dashboard.contents.kuis.create')
+                @includeWhen(Request::is('kuis/lists*'), 'dashboard.contents.kuis.lists')            
+                @includeWhen(Request::is('kuis/edit*'), 'dashboard.contents.kuis.edit')
+                @includeWhen(Request::is('event'), 'dashboard.contents.event.index')
+                @includeWhen(Request::is('dashboard'), 'dashboard.contents.dashboardpage')
+              </div>
+            </div>
           </div>
         </div>
     </main>

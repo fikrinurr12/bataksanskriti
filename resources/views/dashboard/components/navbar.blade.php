@@ -1,4 +1,4 @@
-<nav class="navbar fixed-top bg-body-tertiary px-2 py-3">
+<nav class="navbar sticky-top bg-body-tertiary px-2 py-3">
     <div class="container-fluid d-flex-between">
         <a class="navbar-brand d-flex gap-2" href="{{ route('landingpage') }}">
             <img class="rounded-pill" src="{{ asset('assets/logo/logo.png') }}" width="35em" alt="">
