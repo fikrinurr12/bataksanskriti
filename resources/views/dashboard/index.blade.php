@@ -1,3 +1,11 @@
+<?php
+$user = auth()->user();
+?>
+@if(!$user)
+  <div class="container">
+    <button class="btn btn-danger"><a href="{{ route('login') }}">Login Terlebih Dahulu!</a></button>
+  </div>
+@elseif($user->role == 'admin')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +14,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="{{ asset('fontawesome/css/all.min.css') }}">
     @vite(['resources/sass/app.scss','resources/js/app.js'])
     <style>
       :root {
@@ -126,9 +135,14 @@
             @if($data_event)
               @includeWhen(Request::is('event/'.$data_event->id.'/edit'), 'dashboard.contents.event.edit')
             @endif
-            @includeWhen(Request::is('dashboard'), 'dashboard.contents.dashboardpage')         
+            @includeWhen(Request::is('dashboard'), 'dashboard.contents.dashboardpage')
           </div>
         </div>
     </main>
 </body>
 </html>
+@else
+<div class="container">
+  <button class="btn btn-danger"><a href="{{ route('landingpage') }}">Kembali Ke Halaman Utama!</a></button>
+</div>
+@endif

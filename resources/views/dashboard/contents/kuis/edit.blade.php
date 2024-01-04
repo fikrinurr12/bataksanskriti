@@ -24,7 +24,7 @@
     </div>
     <div class="input-group flex-nowrap my-3">
         <span class="input-group-text" id="addon-wrapping">Jawaban</span>
-        <input type="text" class="form-control" name="jawaban" id="jawaban" placeholder="" aria-label="Username" aria-describedby="addon-wrapping" required value="{{$data_kuis->opsi_d}}">
+        <input type="text" class="form-control" name="jawaban" id="jawaban" placeholder="" aria-label="Username" aria-describedby="addon-wrapping" required value="{{$data_kuis->jawaban}}">
     </div>    
     <button type="submit" style="border: none;" class="px-5 py-2 bg-main text-white rounded">Edit</button>
 </form>

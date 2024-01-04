@@ -17,10 +17,13 @@ class LoginController extends Controller
             'password' => 'required|min:5|max:50'
         ]);        
 
-        if(Auth::attempt($credentials)){                   
-            $request->session()->regenerate();
-
-            return redirect()->intended('/dashboard')->with('success','Login Success!');
+        if(Auth::attempt($credentials)){     
+            $request->session()->regenerate();              
+            if(auth()->user()->role == 'admin'){
+                return redirect()->route('modul')->with('success','Login Success!');
+            }else{
+                return redirect()->route('landingpage')->with('success','Login Success!');
+            }
         }        
 
         return redirect('/login')->with('fail', 'Login Failed !');

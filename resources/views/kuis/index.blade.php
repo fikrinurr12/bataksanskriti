@@ -11,54 +11,19 @@
                 <!--- batas -->
                 
                 <div class="row mb-5 row-cols-1 row-cols-md-4 g-4">
-                    <div class="col">
-                        <div class="card col pt-3 h-100 kuis">
-                            <div class="container-fluid">
-                                <img src="{{ asset('assets/img/event3.jpg') }}" class="card-img-top cover-kuis" alt="...">
-                            </div>
-                            <div class="card-body">
-                              <h5 class="card-title">Kuis 1</h5>
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                              <a href="{{ route('isi_kuis') }}" class="btn btn-danger">Kerjakan</a>
-                            </div>
+                  @foreach($modul as $md)
+                  <div class="col">
+                      <div class="card col pt-3 h-100 kuis">
+                          <div class="container-fluid">
+                              <img src="{{ asset('storage') }}/{{ $md->gambar }}" class="card-img-top cover-kuis" alt="...">
                           </div>
-                    </div>
-                    <div class="col">
-                        <div class="card col pt-3 h-100 kuis">
-                            <div class="container-fluid">
-                                <img src="{{ asset('assets/img/event1.jpg') }}" class="card-img-top cover-kuis" alt="...">
-                            </div>
-                            <div class="card-body">
-                              <h5 class="card-title">Kuis 2</h5>
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                              <a href="{{ route('isi_kuis') }}" class="btn btn-danger">Kerjakan</a>
-                            </div>
+                          <div class="card-body">
+                            <h5 class="card-title">Kuis {{ $md->nama_modul }}</h5>
+                            <a href="{{ route('isi_kuis', $md->id) }}" class="btn btn-danger">Kerjakan</a>
                           </div>
-                    </div>
-                    <div class="col">
-                        <div class="card col pt-3 h-100 kuis">
-                            <div class="container-fluid">
-                                <img src="{{ asset('assets/img/event2.png') }}" class="card-img-top cover-kuis" alt="...">
-                            </div>
-                            <div class="card-body">
-                              <h5 class="card-title">Kuis 3</h5>
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                              <a href="{{ route('isi_kuis') }}" class="btn btn-danger">Kerjakan</a>
-                            </div>
-                          </div>
-                    </div>
-                    <div class="col">
-                        <div class="card col pt-3 h-100 kuis">
-                            <div class="container-fluid">
-                                <img src="{{ asset('assets/img/event3.jpg') }}" class="card-img-top cover-kuis" alt="...">
-                            </div>
-                            <div class="card-body">
-                              <h5 class="card-title">Kuis 4</h5>
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                              <a href="{{ route('isi_kuis') }}" class="btn btn-danger">Kerjakan</a>
-                            </div>
-                          </div>
-                    </div>
+                        </div>
+                  </div>
+                  @endforeach
                 </div>
 
                 <!--- batas -->

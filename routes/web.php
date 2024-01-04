@@ -24,23 +24,29 @@ use App\Http\Controllers\LandingPageController;
 Route::resource('/modul', ModulController::class);
 Route::resource('/event', EventController::class);
 
-Route::get('/', [LandingPageController::class, 'index'])->name('landingpage');
-Route::get('/modul-view',[LandingPageController::class, 'modul'])->name('modul');
-Route::get('/modul-view/details',[LandingPageController::class, 'content_modul'])->name('isi_modul');
-Route::get('/event-view',[LandingPageController::class, 'jadwal'])->name('jadwal');
-Route::get('/event-view/details',[LandingPageController::class, 'content_jadwal'])->name('isi_jadwal');
-Route::get('/kuis-view',[LandingPageController::class, 'kuis'])->name('kuis');
-Route::get('/kuis-view/details',[LandingPageController::class, 'content_kuis'])->name('isi_kuis');
-Route::get('/kuis-view/details/result',[LandingPageController::class, 'hasil_kuis'])->name('hasil_kuis');
+Route::controller(LandingPageController::class)->group(function(){
 
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/', 'index')->name('landingpage');
+    Route::get('/modul-view', 'modul')->name('modul');
+    Route::get('/modul-view/details/{id}', 'content_modul')->name('isi_modul');
+    Route::get('/event-view', 'jadwal')->name('jadwal');
+    Route::get('/event-view/details', 'content_jadwal')->name('isi_jadwal');
+    Route::get('/kuis-view', 'kuis')->name('kuis');
+    Route::get('/kuis-view/details/{id}', 'content_kuis')->name('isi_kuis');
+    Route::post('/kuis-view/details/result', 'hasil_kuis')->name('hasil_kuis');
+    Route::post('/komentar', 'komentar')->name('komentar');
+
+});
+
+
+Route::get('/dashboard', [ModulController::class, 'index'])->name('dashboard');
 
 // authentication
 Route::get('/login',[LoginController::class, 'index'])->name('login');
 Route::post('/login',[LoginController::class, 'login'])->name('login');
-Route::post('/logout', [LoginController::class, 'logout']);
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/register',[RegisterController::class, 'index'])->name('register');
-Route::get('/post',[RegisterController::class, 'register'])->name('register');
+Route::post('/post',[RegisterController::class, 'register'])->name('register_proses');
 
 Route::controller(KuisController::class)->group(function (){
     Route::get('/kuis', 'index');

@@ -1,4 +1,4 @@
-<nav class="navbar fixed-top bg-body-tertiary px-2 py-3">
+<nav class="navbar sticky-top bg-body-tertiary px-2 py-3">
     <div class="container-fluid d-flex-between">
         <a class="navbar-brand d-flex gap-2" href="{{ route('landingpage') }}">
             <img class="rounded-pill" src="{{ asset('assets/logo/logo.png') }}" width="35em" alt="">
@@ -24,7 +24,6 @@
     </div>
     <div class="collapse" id="navbarToggleExternalContent" data-bs-theme="dark">
         <div class="bg-light p-4 d-flex flex-row">
-            @if(auth()->user()->role == 'admin')
                 <div class="p-2">
                     <a href="/dashboard" class="{{Request::is('dashboard') ? 'text-main' : 'text-dark'}}">Dashboard</a>
                 </div>            
@@ -36,18 +35,7 @@
                 </div>            
                 <div class="p-2">
                     <a href="/event" class="{{Request::is('event*') ? 'text-main' : 'text-dark'}}">Event</a>
-                </div>
-            @else
-                <div class="p-2">
-                    <a href="/dashboard" class="{{Request::is('dashboard') ? 'text-main' : 'text-dark'}}">Dashboard</a>
-                </div>            
-                <div class="p-2">
-                    <a href="/modul" class="{{Request::is('modul*') ? 'text-main' : 'text-dark'}}">Modul</a>
-                </div>            
-                <div class="p-2">
-                    <a href="/kuis" class="{{Request::is('kuis*') ? 'text-main' : 'text-dark'}}">Kuis</a>
-                </div>
-            @endif        
+                </div>     
         </div>
     </div>
 </nav>

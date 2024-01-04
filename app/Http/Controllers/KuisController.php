@@ -34,11 +34,11 @@ class KuisController extends Controller
             'opsi_c' => 'required|min:1|max:100',            
             'opsi_d' => 'required|min:1|max:100',
             'jawaban' => 'required|min:1|max:100'
-        ]);        
+        ]);    
 
-        Kuis::create([
+        kuis::create([
             'user_id' => auth()->user()->id,
-            'modul_id' => $id,
+            'id_modul' => $id,
             'soal' => $validateData['soal'],
             'opsi_a' => $validateData['opsi_a'],            
             'opsi_b' => $validateData['opsi_b'],            

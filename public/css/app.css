@@ -118,7 +118,17 @@
 
 .modul img {
     width: 100%;
-    height: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.modul-content img {
+    width: 100%;
+}
+
+.modul-sidebar img {
+    width: 100%;
+    height: 100px;
     object-fit: cover;
 }
 

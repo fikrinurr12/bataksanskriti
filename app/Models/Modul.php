@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\User;
 use App\Models\Kuis;
+use App\Models\Komentar;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -19,7 +20,11 @@ class Modul extends Model
     ];
 
     public function kuis(){
-        return $this->hasMany(Kuis::class);
+        return $this->hasMany(Kuis::class, 'id_modul');
+    }
+
+    public function komentar(){
+        return $this->hasMany(Komentar::class, 'id_modul');
     }
 
     public function user(){
