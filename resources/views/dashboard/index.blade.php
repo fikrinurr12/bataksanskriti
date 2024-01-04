@@ -70,6 +70,18 @@
         display: block;
       }
 
+      .bg-test{
+        background-color: #e9e9e9;
+      }
+
+      .max-height-fill{
+        min-height: 84.5vh;
+      }
+
+      .transform{
+        transform: translateX(-120px)
+      }
+
       @media screen and (max-width: 670px){
         .sidebar{
           display: none
@@ -95,11 +107,11 @@
         @include('dashboard.components.navbar')
     </header>
     <main>
-        <div class="d-flex top">
+        <div class="d-flex top max-height-fill">
           <div class="fixed width-10 p-2 sidebar">    
             @include('dashboard.components.sidebar')
           </div>
-          <div class="flex-fill margin-left-300 bg-light mb-3">
+          <div class="flex-fill margin-left-300 bg-light mb-3 bg bg-primary">
             @includeWhen(Request::is('modul'), 'dashboard.contents.modul.index')
             @includeWhen(Request::is('modul/create'), 'dashboard.contents.modul.create')
             @if($data)

@@ -5,9 +5,17 @@
             <span class="title-responsive d-flex align-items-center">BatakSanskriti</span>
         </a>
         <ul class="d-flex gap-3 py-2 mb-0">
-            <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <img class="rounded-pill border border-2 border-danger profil" src="{{ asset('assets/users/1.jpg') }}" width="35em" alt=""> 
-            </a>
+            <div class="dropdown">
+                <img src="{{ asset('assets/users/1.jpg') }}" width="35em" alt="" class="rounded-pill border border-2 border-danger profil dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">              
+                <ul class="dropdown-menu transform">
+                  <li>
+                    <form action="/logout" method="post">
+                        @csrf
+                        <button class="dropdown-item" href="/logout">Logout</button>
+                    </form>
+                </li>
+                </ul>
+              </div>           
             <button class="navbar-toggler navbar-responsive" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
