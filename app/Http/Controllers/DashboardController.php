@@ -9,7 +9,8 @@ class DashboardController extends Controller
     //
     public function index(){
         return view('dashboard.index', [
-            'data' => null
+            'data_modul' => null,
+            'data_event' => null,
         ]);
     }
 }

@@ -21,6 +21,9 @@ use App\Http\Controllers\LandingPageController;
 |
 */
 
+Route::resource('/modul', ModulController::class);
+Route::resource('/event', EventController::class);
+
 Route::get('/', [LandingPageController::class, 'index'])->name('landingpage');
 Route::get('/modul-view',[LandingPageController::class, 'modul'])->name('modul');
 Route::get('/modul-view/details',[LandingPageController::class, 'content_modul'])->name('isi_modul');
@@ -38,9 +41,6 @@ Route::post('/login',[LoginController::class, 'login'])->name('login');
 Route::post('/logout', [LoginController::class, 'logout']);
 Route::get('/register',[RegisterController::class, 'index'])->name('register');
 Route::get('/post',[RegisterController::class, 'register'])->name('register');
-
-Route::resource('/modul', ModulController::class);
-Route::resource('/event', EventController::class);
 
 Route::controller(KuisController::class)->group(function (){
     Route::get('/kuis', 'index');
