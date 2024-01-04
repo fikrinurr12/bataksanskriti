@@ -23,4 +23,3 @@
             </svg>
             <span class="pt-1 d-flex align-items-center flex-fill">Event</span></a>              
     </div>
-@endif
