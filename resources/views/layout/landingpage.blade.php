@@ -57,9 +57,15 @@
                         <img class="rounded-pill border border-2 border-danger profil" src="{{ asset('assets/users/1.jpg') }}" width="35em" alt=""> 
                     </a>
                     <ul class="dropdown-menu nav-item login">
-                        <li><a class="dropdown-item profil" href="#">Dashboard</a></li>
-                        <li><a class="dropdown-item profil" href="#">Profil</a></li><hr>
-                        <li><a class="dropdown-item profil" href="#">Logout</a></li>
+                        @if(auth()->user()->role == 'admin')
+                            <li><a class="dropdown-item profil" href="#">Dashboard</a></li>
+                        @endif
+                        <li>
+                            <form action="{{ route('logout') }}" method="post">
+                                @csrf
+                                <button class="dropdown-item" href="/logout">Logout</button>
+                            </form>
+                        </li>
                     </ul>
                 </li>    
                 @endauth

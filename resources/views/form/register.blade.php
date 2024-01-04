@@ -8,7 +8,7 @@
       <h2 class="text-center text-dark mt-5"><a class="text-left" href="{{ route('landingpage') }}"><i class="fa fa-arrow-left" aria-hidden="true"></i></a> Register Form</h2>
       <div class="card my-5">
 
-        <form class="card-body cardbody-color p-lg-5" method="post" action="/register">
+        <form class="card-body cardbody-color p-lg-5" method="post" action="{{route('register_proses')}}">
           @csrf
           <div class="mb-3">
             <input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap" placeholder="Contoh: John Doe" required>            
