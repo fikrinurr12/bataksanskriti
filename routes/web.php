@@ -23,7 +23,7 @@ use App\Http\Controllers\LandingPageController;
 
 Route::get('/', [LandingPageController::class, 'index'])->name('landingpage');
 Route::get('/modul-view',[LandingPageController::class, 'modul'])->name('modul');
-Route::get('/modul-view/details',[LandingPageController::class, 'content_modul'])->name('isi_modul');
+Route::get('/modul-view/details/{id}',[LandingPageController::class, 'content_modul'])->name('isi_modul');
 Route::get('/event-view',[LandingPageController::class, 'jadwal'])->name('jadwal');
 Route::get('/event-view/details',[LandingPageController::class, 'content_jadwal'])->name('isi_jadwal');
 Route::get('/kuis-view',[LandingPageController::class, 'kuis'])->name('kuis');

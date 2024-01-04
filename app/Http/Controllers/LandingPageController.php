@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Modul;
 
 class LandingPageController extends Controller
 {
@@ -11,11 +12,14 @@ class LandingPageController extends Controller
     }
 
     public function modul(){
-        return view('modul.index');
+        $data = modul::all();
+        return view('modul.index',compact('data'));
     }
 
-    public function content_modul(){
-        return view('modul.content');
+    public function content_modul($id){
+        $data = modul::find($id);
+        $sidebar = modul::all();
+        return view('modul.content',compact('data','sidebar'));
     }
 
     public function jadwal(){

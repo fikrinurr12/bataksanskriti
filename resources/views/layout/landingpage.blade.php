@@ -58,7 +58,7 @@
                     </a>
                     <ul class="dropdown-menu nav-item login">
                         @if(auth()->user()->role == 'admin')
-                            <li><a class="dropdown-item profil" href="#">Dashboard</a></li>
+                            <li><a class="dropdown-item profil" href="{{ route('dashboard') }}">Dashboard</a></li>
                         @endif
                         <li>
                             <form action="{{ route('logout') }}" method="post">

@@ -1,4 +1,3 @@
-@if(auth()->user()->role == 'admin')
     <div class="d-flex flex-column gap-2 text-center">            
         <a class="d-flex py-1 padding-x rounded text-decoration-none text-dark {{Request::is('dashboard')?'bg-main text-white':''}}" href="/dashboard">
             <svg class="m-2" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
@@ -24,4 +23,3 @@
             </svg>
             <span class="pt-1 d-flex align-items-center flex-fill">Event</span></a>              
     </div>
-@endif
