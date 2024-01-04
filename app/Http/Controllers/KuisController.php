@@ -38,7 +38,7 @@ class KuisController extends Controller
 
         kuis::create([
             'user_id' => auth()->user()->id,
-            'id_modul' => $id,
+            'modul_id' => $id,
             'soal' => $validateData['soal'],
             'opsi_a' => $validateData['opsi_a'],            
             'opsi_b' => $validateData['opsi_b'],            

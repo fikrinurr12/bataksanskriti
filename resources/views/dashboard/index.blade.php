@@ -24,7 +24,7 @@ $user = auth()->user();
       }
 
       .top{
-          margin-top: 100px;
+          margin-top: 25px;
       }
 
       .width-10{
@@ -84,7 +84,7 @@ $user = auth()->user();
       }
 
       .max-height-fill{
-        min-height: 84.5vh;
+        min-height: 83vh;
       }
 
       .transform{
@@ -112,9 +112,7 @@ $user = auth()->user();
     <title>Title</title>
 </head>
 <body>
-    <header>
-        @include('dashboard.components.navbar')
-    </header>
+    @include('dashboard.components.navbar')
     <main>
         <div class="top max-height-fill">
           <div class="position-absolute width-10 p-2 sidebar">    
