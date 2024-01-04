@@ -30,7 +30,7 @@ Route::get('/kuis-view',[LandingPageController::class, 'kuis'])->name('kuis');
 Route::get('/kuis-view/details',[LandingPageController::class, 'content_kuis'])->name('isi_kuis');
 Route::get('/kuis-view/details/result',[LandingPageController::class, 'hasil_kuis'])->name('hasil_kuis');
 
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/dashboard', [ModulController::class, 'index'])->name('dashboard');
 
 // authentication
 Route::get('/login',[LoginController::class, 'index'])->name('login');

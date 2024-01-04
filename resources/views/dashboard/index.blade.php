@@ -125,6 +125,7 @@ $user = auth()->user();
             <div class="col-9 pt-2">
               <div class="container bg-light mb-3 bg bg-primary">
                 @includeWhen(Request::is('modul'), 'dashboard.contents.modul.index')
+                @includeWhen(Request::is('dashboard'), 'dashboard.contents.modul.index')
                 @includeWhen(Request::is('modul/create'), 'dashboard.contents.modul.create')
                 @if($data)
                 @includeWhen(Request::is('modul/'.$data->id.'/edit'), 'dashboard.contents.modul.edit')
@@ -134,7 +135,6 @@ $user = auth()->user();
                 @includeWhen(Request::is('kuis/lists*'), 'dashboard.contents.kuis.lists')            
                 @includeWhen(Request::is('kuis/edit*'), 'dashboard.contents.kuis.edit')
                 @includeWhen(Request::is('event'), 'dashboard.contents.event.index')
-                @includeWhen(Request::is('dashboard'), 'dashboard.contents.dashboardpage')
               </div>
             </div>
           </div>
