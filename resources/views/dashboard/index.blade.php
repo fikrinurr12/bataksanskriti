@@ -115,7 +115,7 @@ $user = auth()->user();
     @include('dashboard.components.navbar')
     <main>
         <div class="top max-height-fill">
-          <div class="position-absolute width-10 p-2 sidebar">    
+          <div class="position-fixed width-10 p-2 sidebar">    
             @include('dashboard.components.sidebar')
           </div>
           <div class="flex-fill margin-left-300 bg-light mb-3 bg bg-primary">

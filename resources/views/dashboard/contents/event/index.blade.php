@@ -5,7 +5,7 @@
       <div class="card">
         <img src="storage/{{$data->gambar}}" class="card-img-top max-height-200" alt="...">
         <div class="card-body">
-          <h4 class="card-title">{{$data->judul}}</h4>
+          {{-- <h4 class="card-title">{{$data->judul}}</h4> --}}
           <p class="card-text mb-0">Author: {{$data->user->nama_lengkap}}</p>
           <p class="card-text mb-0">Tanggal: {{\Carbon\Carbon::parse($data->tanggal)->format('Y-m-d')}}</p>          
           <p class="card-text mb-0">Waktu: {{\Carbon\Carbon::parse($data->tanggal)->format('H:i')}}</p>          
@@ -84,7 +84,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <h5>Yakin ingin menghapus {{$data->judul}} ?</h5>
+            <h5>Yakin ingin menghapus Event ini ?</h5>
           </div>
           <div class="modal-footer">
             <form action="/event/{{$data->id}}" method="post">

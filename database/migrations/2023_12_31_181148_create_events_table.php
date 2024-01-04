@@ -13,8 +13,7 @@ return new class extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
-            $table->string('judul');            
+            $table->foreignId('user_id');                  
             $table->string('gambar');
             $table->datetime('tanggal');
             $table->string('lokasi');

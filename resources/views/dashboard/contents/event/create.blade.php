@@ -1,10 +1,6 @@
 <h2 class="text-dark mt-5"><a class="text-left" href="/modul"><i class="fa fa-arrow-left" aria-hidden="true"></i></a> Form Buat Event</h2>
 <form action="/event" method="post" class="me-3" enctype="multipart/form-data">
-    @csrf
-    <div class="input-group flex-nowrap my-3">
-        <span class="input-group-text" id="addon-wrapping">Judul Event</span>
-        <input type="text" class="form-control" name="judul" id="judul" placeholder="" aria-label="Username" aria-describedby="addon-wrapping" required>
-    </div>
+    @csrf    
     <div class="input-group my-3">
         <span class="input-group-text" id="addon-wrapping">Tanggal</span>
         <input type="datetime-local" class="form-control" name="tanggal" id="tanggal" placeholder="" aria-label="Username" aria-describedby="addon-wrapping" required>
