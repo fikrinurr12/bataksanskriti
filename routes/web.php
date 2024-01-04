@@ -30,7 +30,8 @@ Route::controller(LandingPageController::class)->group(function(){
     Route::get('/event-view/details', 'content_jadwal')->name('isi_jadwal');
     Route::get('/kuis-view', 'kuis')->name('kuis');
     Route::get('/kuis-view/details/{id}', 'content_kuis')->name('isi_kuis');
-    Route::get('/kuis-view/details/result', 'hasil_kuis')->name('hasil_kuis');
+    Route::post('/kuis-view/details/result', 'hasil_kuis')->name('hasil_kuis');
+    Route::post('/komentar', 'komentar')->name('komentar');
 
 });
 

@@ -10,6 +10,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Komentar extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'user_id',
+        'id_modul',
+        'komentar',
+    ];
     public function user(){
         return $this->belongsTo(User::class);
     }

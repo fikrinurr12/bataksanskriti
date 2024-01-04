@@ -21,13 +21,15 @@
                 <hr>
                 @auth
                 <h5 class="pb-2">Tinggalkan Komentar.</h5>
-                <form class="komentar pb-5">
+                <form class="komentar pb-5" action="{{ route('komentar') }}" method="post">
+                    @csrf
                     <div class="row">
                         <div class="col-1">
+                            <input type="text" name="id_modul" hidden value="{{ $data->id }}">
                             <img src="{{ asset('assets/users/1.jpg') }}" alt="" class="img-fluid rounded-circle">
                         </div>
                       <div class="col-10">
-                        <input type="text" class="form-control" placeholder="Ketik Disini" name="email">
+                        <input type="text" class="form-control" placeholder="Ketik Disini" name="komentar">
                       </div>
                       <div class="col-1">
                         <input type="submit" class="btn btn-primary" value="Kirim">
@@ -41,45 +43,17 @@
 
                 <h5>Komentar Pengguna :</h5>
                 <div class="komentar mt-3">
+                    @foreach($komentar as $km)
                     <div class="row mt-2">
                         <div class="col-1">
                             <img src="{{ asset('assets/users/1.jpg') }}" alt="" class="img-fluid rounded-circle">
                         </div>
                         <div class="col-11">
-                            <b>Saipul</b>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, commodi iure! Omnis, quibusdam nihil temporibus deserunt odio a ipsa excepturi ut consectetur blanditiis illum sunt explicabo necessitatibus eveniet ex consequatur.</p>
+                            <b>{{ $km->user->nama_lengkap }}</b>
+                            <p>{{ $km->komentar }}</p>
                         </div>
                     </div>
-
-                    <div class="row mt-2">
-                        <div class="col-1">
-                            <img src="{{ asset('assets/users/2.jpg') }}" alt="" class="img-fluid rounded-circle">
-                        </div>
-                        <div class="col-11">
-                            <b>Sidak</b>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, commodi iure! Omnis, quibusdam nihil temporibus deserunt odio a ipsa excepturi ut consectetur blanditiis illum sunt explicabo necessitatibus eveniet ex consequatur.</p>
-                        </div>
-                    </div>
-
-                    <div class="row mt-2">
-                        <div class="col-1">
-                            <img src="{{ asset('assets/users/3.jpg') }}" alt="" class="img-fluid rounded-circle">
-                        </div>
-                        <div class="col-11">
-                            <b>Somat</b>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, commodi iure! Omnis, quibusdam nihil temporibus deserunt odio a ipsa excepturi ut consectetur blanditiis illum sunt explicabo necessitatibus eveniet ex consequatur.</p>
-                        </div>
-                    </div>
-
-                    <div class="row mt-2">
-                        <div class="col-1">
-                            <img src="{{ asset('assets/users/4.jpg') }}" alt="" class="img-fluid rounded-circle">
-                        </div>
-                        <div class="col-11">
-                            <b>Soheb</b>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, commodi iure! Omnis, quibusdam nihil temporibus deserunt odio a ipsa excepturi ut consectetur blanditiis illum sunt explicabo necessitatibus eveniet ex consequatur.</p>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
                 <!-- komentar -->
             </div>

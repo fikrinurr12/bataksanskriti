@@ -8,7 +8,8 @@
             <h2><a class="fw-med text-black" href="{{ route('kuis') }}"><i class="fa fa-arrow-left" aria-hidden="true"></i></a> Kuis {{ $modul->nama_modul }}</h2><hr>
                 @auth    
             <!--- batas -->
-                <form action="{{ route('hasil_kuis') }}">
+                <form action="{{ route('hasil_kuis') }}" method="post">
+                    @csrf
                     @php
                         $no = 1; 
                     @endphp
