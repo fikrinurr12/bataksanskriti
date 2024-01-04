@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Event;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 class EventController extends Controller
@@ -35,7 +34,30 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //        
+        $id = auth()->user()->id;
+        $validateData = $request->validate([
+            'judul' => 'required|min:5|max:50',
+            'gambar' => 'required|file|image|max:10024',
+            'tanggal' => 'required|date',
+            'lokasi' => 'required|min:5|max:50',
+            'deskripsi' => 'required|min:5|max:1000'
+        ]);
+
+        if($request->file('gambar')){
+            $validateData['gambar'] = $request->file('gambar')->store('event');
+        }
+
+        Event::create([
+            'user_id' => $id,
+            'judul' => $validateData['judul'],
+            'gambar' => $validateData['gambar'],
+            'tanggal' => $validateData['tanggal'],
+            'lokasi' => $validateData['lokasi'],
+            'deskripsi' => $validateData['deskripsi']
+        ]);
+
+        return redirect('/event')->with('success', 'Event berhasil ditambahkan !');
     }
 
     /**
@@ -60,6 +82,40 @@ class EventController extends Controller
     public function update(Request $request, Event $event)
     {
         //
+        if($request['gambar']){
+            $validateData = $request->validate([
+                'judul' => 'required|min:5|max:50',
+                'gambar' => 'required|file|image|max:10024',
+                'tanggal' => 'required|date',
+                'lokasi' => 'required|min:5|max:50',
+                'deskripsi' => 'required|min:5|max:1000'     
+            ]);
+    
+            $event->update([                
+                'judul' => $validateData['judul'],
+                'gambar' => $validateData['gambar'],
+                'tanggal' => $validateData['tanggal'],
+                'lokasi' => $validateData['lokasi'],
+                'deskripsi' => $validateData['deskripsi']
+            ]);
+        }
+        else{
+            $validateData = $request->validate([
+                'judul' => 'required|min:5|max:50',                
+                'tanggal' => 'required|date',
+                'lokasi' => 'required|min:5|max:50',
+                'deskripsi' => 'required|min:5|max:1000'     
+            ]);
+    
+            $event->update([                
+                'judul' => $validateData['judul'],                
+                'tanggal' => $validateData['tanggal'],
+                'lokasi' => $validateData['lokasi'],
+                'deskripsi' => $validateData['deskripsi']
+            ]);
+        }
+
+        return redirect('/event')->with('success', 'Modul Berhasil di Update!');
     }
 
     /**
@@ -67,9 +123,6 @@ class EventController extends Controller
      */
     public function destroy(Event $event)
     {
-        //        
-        Event::destroy($event->id);
-        Storage::disk('local')->delete(['assets/jadwal/'.$event->gambar]);
-        return redirect('/event')->with('success', 'Event Berhasil Dihapus !');
+        //
     }
 }
