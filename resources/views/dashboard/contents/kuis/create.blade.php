@@ -28,5 +28,5 @@
     <div class="input-group flex-nowrap my-3">        
         <input type="hidden" class="form-control" name="modul_id" id="modul_id" placeholder="" aria-label="Username" aria-describedby="addon-wrapping" value="{{$data->id}}">
     </div>
-    <button type="submit" class="px-5 py-2 bg-main text-white rounded">Tambah</button>
+    <button type="submit" style="border: none;" class="px-5 py-2 bg-main text-white rounded">Tambah</button>
 </form>

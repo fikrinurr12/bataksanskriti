@@ -17,7 +17,8 @@ class ModulController extends Controller
         //
         return view('dashboard.index', [
             'datas' => Modul::get(),
-            'data' => null
+            'data_modul' => null,
+            'data_event' => null,
         ]);
     }
 
@@ -28,7 +29,8 @@ class ModulController extends Controller
     {
         //
         return view('dashboard.index', [
-            'data' => null
+            'data_modul' => null,
+            'data_event' => null
         ]);
     }
 
@@ -75,7 +77,8 @@ class ModulController extends Controller
     {
         //
         return view('dashboard.index', [
-            'data' => $modul
+            'data_modul' => $modul,            
+            'data_event' => null,
         ]);
     }
 

@@ -14,7 +14,7 @@ class Kuis extends Model
     use HasFactory;
     protected $fillable = [
         'user_id',
-        'id_modul',
+        'modul_id',
         'soal',
         'opsi_a',
         'opsi_b',

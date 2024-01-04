@@ -9,6 +9,7 @@
                 <img src="{{ asset('assets/users/1.jpg') }}" width="35em" alt="" class="rounded-pill border border-2 border-danger profil dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">              
                 <ul class="dropdown-menu transform">
                   <li>
+                    <a href="/profile" class="dropdown-item">Profile</a>
                     <form action="/logout" method="post">
                         @csrf
                         <button class="dropdown-item" href="/logout">Logout</button>

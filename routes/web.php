@@ -21,6 +21,9 @@ use App\Http\Controllers\LandingPageController;
 |
 */
 
+Route::resource('/modul', ModulController::class);
+Route::resource('/event', EventController::class);
+
 Route::controller(LandingPageController::class)->group(function(){
 
     Route::get('/', 'index')->name('landingpage');
@@ -44,10 +47,6 @@ Route::post('/login',[LoginController::class, 'login'])->name('login');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/register',[RegisterController::class, 'index'])->name('register');
 Route::post('/post',[RegisterController::class, 'register'])->name('register_proses');
-
-Route::resource('/modul', ModulController::class);
-
-Route::resource('/event', EventController::class);
 
 Route::controller(KuisController::class)->group(function (){
     Route::get('/kuis', 'index');

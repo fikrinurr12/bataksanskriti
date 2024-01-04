@@ -20,11 +20,11 @@ class Modul extends Model
     ];
 
     public function kuis(){
-        return $this->hasMany(Kuis::class, 'id_modul');
+        return $this->hasMany(Kuis::class);
     }
 
     public function komentar(){
-        return $this->hasMany(Komentar::class, 'id_modul');
+        return $this->hasMany(Komentar::class);
     }
 
     public function user(){

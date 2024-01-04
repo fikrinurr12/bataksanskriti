@@ -14,10 +14,11 @@ class EventController extends Controller
      */
     public function index()
     {
-        //
+        //        
         return view('dashboard.index', [
-            'datas' => Event::get(),
-            'data' => null
+            'data_modul' => null,
+            'data_event' => null,
+            'datas' => Event::all()
         ]);
     }
 
@@ -27,9 +28,6 @@ class EventController extends Controller
     public function create()
     {
         //
-        return view('dashboard.index', [
-            'data' => null
-        ]);
     }
 
     /**
@@ -37,28 +35,7 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        $user = auth()->user();        
-        
-        $validateData = $request->validate([
-            'lokasi' => 'required|min:5|max:500',
-            'gambar' => 'required|file|image|max:10024',
-            'tanggal' => 'required|min:5|max:1000',
-            'deskripsi' => 'required|min:5|max:5000'
-        ]);                
-
-        if($request->file('gambar')){
-            $validateData['gambar'] = $request->file('gambar')->store('assets/jadwal','public');
-        }
-
-        Event::create([
-            'user_id' => $user->id,
-            'gambar' => $validateData['gambar'],
-            'tanggal' => $validateData['tanggal'],
-            'lokasi' => $validateData['lokasi'],
-            'deskripsi' => $validateData['deskripsi']
-        ]);
-
-        return redirect('/event')->with('success', 'Berhasil membuat modul !');
+        //
     }
 
     /**
@@ -66,7 +43,7 @@ class EventController extends Controller
      */
     public function show(Event $event)
     {
-        //
+        //        
     }
 
     /**
@@ -75,9 +52,6 @@ class EventController extends Controller
     public function edit(Event $event)
     {
         //
-        return view('dashboard.index', [
-            'data' => $event
-        ]);
     }
 
     /**
@@ -86,43 +60,6 @@ class EventController extends Controller
     public function update(Request $request, Event $event)
     {
         //
-        $user = auth()->user();
-        if($request['gambar']){
-            $validateData = $request->validate([
-                'lokasi' => ['required','min:5','max:500'],
-                'gambar' => ['required', 'file', 'image', 'max:10024'],
-                'tanggal' => ['required','min:5','max:1000'],
-                'deskripsi' => 'required|min:5|max:5000'   
-            ]);
-
-            if($request->file('gambar')){
-                $validateData['gambar'] = $request->file('gambar')->store('assets/jadwal','public');
-            }
-    
-            $event->update([
-                'user_id' => $user->id,
-                'lokasi' => $validateData['lokasi'],
-                'gambar' => $validateData['gambar'],
-                'tanggal' => $validateData['tanggal'],
-                'deskripsi' => $validateData['deskripsi']
-            ]);
-        }
-        else{
-            $validateData = $request->validate([
-                'lokasi' => ['required','min:5','max:500'],                
-                'tanggal' => ['required','min:5','max:1000'],  
-                'deskripsi' => ['required','min:5','max:5000']     
-            ]);
-    
-            $event->update([
-                'user_id' => $user->id,
-                'lokasi' => $validateData['lokasi'],                
-                'tanggal' => $validateData['tanggal'],
-                'deskripsi' => $validateData['deskripsi']
-            ]);
-        }
-
-        return redirect('/event')->with('success', 'Jadwal Berhasil di Update!');
     }
 
     /**

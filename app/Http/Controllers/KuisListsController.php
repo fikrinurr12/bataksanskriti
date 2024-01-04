@@ -11,7 +11,8 @@ class KuisListsController extends Controller
     public function index(Modul $id){
         return view('dashboard.index', [
             'kuis_list' => $id->kuis,
-            'data' => null
+            'data_modul' => null,
+            'data_event' => null
         ]);
     }
 }

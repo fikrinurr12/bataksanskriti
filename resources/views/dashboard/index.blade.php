@@ -24,7 +24,7 @@ $user = auth()->user();
       }
 
       .top{
-          margin-top: 100px;
+          margin-top: 25px;
       }
 
       .width-10{
@@ -84,7 +84,7 @@ $user = auth()->user();
       }
 
       .max-height-fill{
-        min-height: 84.5vh;
+        min-height: 83vh;
       }
 
       .transform{
@@ -106,40 +106,34 @@ $user = auth()->user();
 
         .title-responsive{
           display: none;
-        }
+        }        
       }
     </style>
     <title>Title</title>
 </head>
 <body>
-    <header>
-        @include('dashboard.components.navbar')
-    </header>
+    @include('dashboard.components.navbar')
     <main>
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-3">
-              <div class="fixed width-10 p-2 sidebar">    
-                @include('dashboard.components.sidebar')
-              </div>
-            </div>
-            <div class="col-9 pt-2">
-              <div class="container bg-light mb-3 bg bg-primary">
-                @includeWhen(Request::is('modul'), 'dashboard.contents.modul.index')
-                @includeWhen(Request::is('dashboard'), 'dashboard.contents.modul.index')
-                @includeWhen(Request::is('modul/create'), 'dashboard.contents.modul.create')
-                @if($data)
-                @includeWhen(Request::is('modul/'.$data->id.'/edit'), 'dashboard.contents.modul.edit')
-                @includeWhen(Request::is('event/'.$data->id.'/edit'), 'dashboard.contents.event.edit')
-                @endif
-                @includeWhen(Request::is('kuis'), 'dashboard.contents.kuis.index')
-                @includeWhen(Request::is('kuis/create*'), 'dashboard.contents.kuis.create')
-                @includeWhen(Request::is('kuis/lists*'), 'dashboard.contents.kuis.lists')            
-                @includeWhen(Request::is('kuis/edit*'), 'dashboard.contents.kuis.edit')
-                @includeWhen(Request::is('event'), 'dashboard.contents.event.index')
-                @includeWhen(Request::is('event/create'), 'dashboard.contents.event.create')
-              </div>
-            </div>
+        <div class="top max-height-fill">
+          <div class="position-absolute width-10 p-2 sidebar">    
+            @include('dashboard.components.sidebar')
+          </div>
+          <div class="flex-fill margin-left-300 bg-light mb-3 bg bg-primary">
+            @includeWhen(Request::is('modul'), 'dashboard.contents.modul.index')
+            @includeWhen(Request::is('modul/create'), 'dashboard.contents.modul.create')
+            @if($data_modul)            
+              @includeWhen(Request::is('modul/'.$data_modul->id.'/edit'), 'dashboard.contents.modul.edit')
+            @endif
+            @includeWhen(Request::is('kuis'), 'dashboard.contents.kuis.index')
+            @includeWhen(Request::is('kuis/create*'), 'dashboard.contents.kuis.create')
+            @includeWhen(Request::is('kuis/lists*'), 'dashboard.contents.kuis.lists')            
+            @includeWhen(Request::is('kuis/edit*'), 'dashboard.contents.kuis.edit')
+            @includeWhen(Request::is('event'), 'dashboard.contents.event.index')
+            @includeWhen(Request::is('event/create'), 'dashboard.contents.event.create')
+            @if($data_event)
+              @includeWhen(Request::is('event/'.$data_event->id.'/edit'), 'dashboard.contents.event.edit')
+            @endif
+            @includeWhen(Request::is('dashboard'), 'dashboard.contents.dashboardpage')
           </div>
         </div>
     </main>

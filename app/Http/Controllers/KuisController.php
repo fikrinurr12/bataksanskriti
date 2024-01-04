@@ -11,14 +11,17 @@ class KuisController extends Controller
     //
     public function index(){
         return view('dashboard.index', [
-            'data' => null,
+            'data_modul' => null,
+            'data_event' => null,
             'datas' => Modul::get()
         ]);
     }
 
     public function create(Modul $modul){        
         return view('dashboard.index', [
-            'data' => $modul
+            'data' => $modul,
+            'data_modul' => null,
+            'data_event' => null,
         ]);
     }
 
@@ -35,7 +38,7 @@ class KuisController extends Controller
 
         kuis::create([
             'user_id' => auth()->user()->id,
-            'id_modul' => $id,
+            'modul_id' => $id,
             'soal' => $validateData['soal'],
             'opsi_a' => $validateData['opsi_a'],            
             'opsi_b' => $validateData['opsi_b'],            
@@ -49,7 +52,8 @@ class KuisController extends Controller
 
     public function edit(Kuis $kuis){        
         return view('dashboard.index', [
-            'data' => null,
+            'data_modul' => null,
+            'data_event' => null,
             'data_kuis' => $kuis
         ]);
     }
