@@ -14,7 +14,7 @@ class Kuis extends Model
     use HasFactory;
     protected $fillable = [
         'user_id',
-        'modul_id',
+        'id_modul',
         'soal',
         'opsi_a',
         'opsi_b',
@@ -28,7 +28,7 @@ class Kuis extends Model
     }
 
     public function modul(){
-        return $this->belongsTo(Modul::class);
+        return $this->belongsTo(Modul::class, 'id');
     }
 
     public function skor(){

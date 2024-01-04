@@ -14,7 +14,7 @@
                     <p>{{ $data->deskripsi }}</p>
                 </div>
                 <div class="row pt-3">
-                    <a href="{{ route('isi_kuis') }}"><button class="btn btn-danger">Kerjakan Kuis</button></a>
+                    <a href="{{ route('isi_kuis',$data->id) }}"><button class="btn btn-danger">Kerjakan Kuis</button></a>
                 </div>
 
                 <!-- komentar -->

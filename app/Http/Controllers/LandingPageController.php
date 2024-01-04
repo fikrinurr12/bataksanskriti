@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Kuis;
 use App\Models\Modul;
 
 class LandingPageController extends Controller
@@ -31,11 +32,14 @@ class LandingPageController extends Controller
     }
 
     public function kuis(){
-        return view('kuis.index');
+        $modul = Modul::all();
+        return view('kuis.index', compact('modul'));
     }
 
-    public function content_kuis(){
-        return view('kuis.content');
+    public function content_kuis(Modul $id){
+        $modul = $id;
+        $kuis = $id->kuis;
+        return view('kuis.content', compact('kuis','modul'));
     }
 
     public function hasil_kuis(){

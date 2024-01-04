@@ -19,7 +19,7 @@ class Modul extends Model
     ];
 
     public function kuis(){
-        return $this->hasMany(Kuis::class);
+        return $this->hasMany(Kuis::class, 'id_modul');
     }
 
     public function user(){
