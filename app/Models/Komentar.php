@@ -12,7 +12,7 @@ class Komentar extends Model
     use HasFactory;
     protected $fillable = [
         'user_id',
-        'id_modul',
+        'modul_id',
         'komentar',
     ];
     public function user(){

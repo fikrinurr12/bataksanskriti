@@ -4,7 +4,7 @@
     @csrf    
     <div class="input-group my-3">
         <span class="input-group-text" id="addon-wrapping">Tanggal</span>
-        <input value="{{$data_event->tanggal}}" type="datetime-local" class="form-control" name="tanggal" id="tanggal" placeholder="" aria-label="Username" aria-describedby="addon-wrapping" required>
+        <input value="{{$data_event->tanggal}}" type="datetime" class="form-control" name="tanggal" id="tanggal" placeholder="" aria-label="Username" aria-describedby="addon-wrapping" required>
     </div>
     <div class="input-group my-3">
         <span class="input-group-text" id="addon-wrapping">Lokasi</span>

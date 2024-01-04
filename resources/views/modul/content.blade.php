@@ -25,7 +25,7 @@
                     @csrf
                     <div class="row">
                         <div class="col-1">
-                            <input type="text" name="id_modul" hidden value="{{ $data->id }}">
+                            <input type="text" name="modul_id" hidden value="{{ $data->id }}">
                             <img src="{{ asset('assets/users/1.jpg') }}" alt="" class="img-fluid rounded-circle">
                         </div>
                       <div class="col-10">

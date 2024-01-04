@@ -7,8 +7,7 @@
         <div class="card-body">
           {{-- <h4 class="card-title">{{$data->judul}}</h4> --}}
           <p class="card-text mb-0">Author: {{$data->user->nama_lengkap}}</p>
-          <p class="card-text mb-0">Tanggal: {{\Carbon\Carbon::parse($data->tanggal)->format('Y-m-d')}}</p>          
-          <p class="card-text mb-0">Waktu: {{\Carbon\Carbon::parse($data->tanggal)->format('H:i')}}</p>          
+          <p class="card-text mb-0">Tanggal: {{\Carbon\Carbon::parse($data->tanggal)->format('Y-m-d')}}</p>     
           <p class="card-text">Lokasi: {{$data->lokasi}}</p>
           <p class="card-text">
             @php

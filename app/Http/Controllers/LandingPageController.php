@@ -23,7 +23,7 @@ class LandingPageController extends Controller
     public function content_modul($id){
         $data = modul::find($id);
         $sidebar = modul::all();
-        $komentar = Komentar::where('id_modul', $id)->get();
+        $komentar = Komentar::where('modul_id', $id)->get();
         return view('modul.content',compact('data','sidebar','komentar'));
     }
 
@@ -61,11 +61,11 @@ class LandingPageController extends Controller
 
         Komentar::create([
             'user_id' => auth()->user()->id,
-            'id_modul' => $request->id_modul,
+            'modul_id' => $request->modul_id,
             'komentar' => $validateData['komentar']
         ]);
 
-        return redirect()->route('isi_modul', $request->id_modul)->with('success', 'Berhasil Komentar!');
+        return redirect()->route('isi_modul', $request->modul_id)->with('success', 'Berhasil Komentar!');
     }   
 
 }

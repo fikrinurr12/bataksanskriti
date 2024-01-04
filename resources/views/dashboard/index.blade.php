@@ -133,7 +133,7 @@ $user = auth()->user();
             @if($data_event)
               @includeWhen(Request::is('event/'.$data_event->id.'/edit'), 'dashboard.contents.event.edit')
             @endif
-            @includeWhen(Request::is('dashboard'), 'dashboard.contents.dashboardpage')
+            @includeWhen(Request::is('dashboard'), 'dashboard.contents.modul.index')
           </div>
         </div>
     </main>

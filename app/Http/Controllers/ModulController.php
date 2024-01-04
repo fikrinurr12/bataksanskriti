@@ -40,8 +40,7 @@ class ModulController extends Controller
     public function store(Request $request)
     {
         //
-        $user = auth()->user();        
-        
+        $user = auth()->user();
         $validateData = $request->validate([
             'nama_modul' => 'required|min:5|max:50',
             'gambar' => 'required|file|image|max:10024',
