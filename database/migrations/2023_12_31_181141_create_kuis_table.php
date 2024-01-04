@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('kuis', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
-            $table->foreignId('modul_id');
+            $table->foreignId('id_modul');
             $table->string('soal');
             $table->string('opsi_a');
             $table->string('opsi_b');

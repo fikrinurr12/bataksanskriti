@@ -55,42 +55,22 @@
     <div class="row mb-5">
       <div id="cardSlider" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner mt-5">
-          <a href="{{ route('jadwal') }}">
+
+          @foreach ($data as $d)
+          <a href="{{ route('isi_jadwal', $d->id) }}">
             <div class="carousel-item active">
               <div class="card mini-card mx-auto">
                 <!-- Mini card content for the first carousel item -->
-                <img src="{{ asset('assets/img/event1.jpg') }}" class="card-img-top" alt="Image 1">
+                <img src="{{ asset('storage') }}/{{ $d->gambar }}" class="card-img-top" alt="Image 1">
                 <div class="card-body">
-                  <h5 class="card-title">Card 1</h5>
-                  <p class="card-text">Some text for Card 1.</p>
+                  <h5 class="card-title">{{ $d->lokasi }}</h5>
+                  <p class="card-text">By : {{ $d->user->nama_lengkap }}</p>
                 </div>
               </div>
             </div>
           </a>
-          <a href="{{ route('jadwal') }}">
-            <div class="carousel-item">
-              <div class="card mini-card mx-auto">
-                <!-- Mini card content for the second carousel item -->
-                <img src="{{ asset('assets/img/event2.png') }}" class="card-img-top" alt="Image 2">
-                <div class="card-body">
-                  <h5 class="card-title">Card 2</h5>
-                  <p class="card-text">Some text for Card 2.</p>
-                </div>
-              </div>
-            </div>
-          </a>
-          <a href="{{ route('jadwal') }}">
-            <div class="carousel-item">
-              <div class="card mini-card mx-auto">
-                <!-- Mini card content for the third carousel item -->
-                <img src="{{ asset('assets/img/event3.jpg') }}" class="card-img-top" alt="Image 3">
-                <div class="card-body">
-                  <h5 class="card-title">Card 3</h5>
-                  <p class="card-text">Some text for Card 3.</p>
-                </div>
-              </div>
-            </div>
-          </a>
+          @endforeach
+
           <!-- Add more carousel items with sets of mini cards as needed -->
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#cardSlider" data-bs-slide="prev">

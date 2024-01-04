@@ -92,6 +92,10 @@ class ModulController extends Controller
                 'deskripsi' => ['required','min:10','max:1000'],     
             ]);
     
+            if($request->file('gambar')){
+                $validateData['gambar'] = $request->file('gambar')->store('assets/modul','public');
+            }
+
             $modul->update([
                 'nama_modul' => $validateData['nama_modul'],
                 'gambar' => $validateData['gambar'],
@@ -120,7 +124,7 @@ class ModulController extends Controller
     {
         //        
         Modul::destroy($modul->id);
-        Storage::disk('local')->delete(['public/'.$modul->gambar]);
+        Storage::disk('local')->delete(['assets/modul/'.$modul->gambar]);
         return redirect('/modul')->with('success', 'Modul Berhasil Dihapus !');
     }
 }

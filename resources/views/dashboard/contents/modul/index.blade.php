@@ -38,7 +38,17 @@
           </div>
           <div class="modal-body">
             @if($data->komentar)
-              <h5>Ada Komentar</h5>
+              @foreach ($data->komentar as $d)
+                  <div class="row">
+                    <div class="col-1">
+                      <img src="{{ asset('assets/users/1.jpg') }}" alt="" class="img-fluid rounded-circle">
+                    </div>
+                    <div class="col-11">
+                      <b>{{ $d->user->nama_lengkap }}</b>
+                      <p>{{ $d->komentar }}</p>
+                    </div>
+                  </div>
+              @endforeach
             @else
               <h5>Tidak ada komentar</h5>
             @endif

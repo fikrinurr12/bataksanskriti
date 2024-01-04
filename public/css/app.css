@@ -126,7 +126,8 @@
     width: 100%;
 }
 
-.modul-sidebar img {
+.modul-sidebar img,
+.jadwal-sidebar img {
     width: 100%;
     height: 100px;
     object-fit: cover;

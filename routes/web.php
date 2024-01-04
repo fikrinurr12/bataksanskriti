@@ -27,7 +27,7 @@ Route::controller(LandingPageController::class)->group(function(){
     Route::get('/modul-view', 'modul')->name('modul');
     Route::get('/modul-view/details/{id}', 'content_modul')->name('isi_modul');
     Route::get('/event-view', 'jadwal')->name('jadwal');
-    Route::get('/event-view/details', 'content_jadwal')->name('isi_jadwal');
+    Route::get('/event-view/details/{id}', 'content_jadwal')->name('isi_jadwal');
     Route::get('/kuis-view', 'kuis')->name('kuis');
     Route::get('/kuis-view/details/{id}', 'content_kuis')->name('isi_kuis');
     Route::post('/kuis-view/details/result', 'hasil_kuis')->name('hasil_kuis');
@@ -46,6 +46,7 @@ Route::get('/register',[RegisterController::class, 'index'])->name('register');
 Route::post('/post',[RegisterController::class, 'register'])->name('register_proses');
 
 Route::resource('/modul', ModulController::class);
+
 Route::resource('/event', EventController::class);
 
 Route::controller(KuisController::class)->group(function (){

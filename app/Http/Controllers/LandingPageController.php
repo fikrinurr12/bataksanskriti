@@ -6,11 +6,13 @@ use Illuminate\Http\Request;
 use App\Models\Kuis;
 use App\Models\Modul;
 use App\Models\Komentar;
+use App\Models\Event;
 
 class LandingPageController extends Controller
 {
     public function index(){
-        return view('index');
+        $data = Event::get();
+        return view('index',compact('data'));
     }
 
     public function modul(){
@@ -26,11 +28,14 @@ class LandingPageController extends Controller
     }
 
     public function jadwal(){
-        return view('jadwal.index');
+        $data = Event::get();
+        return view('jadwal.index',compact('data'));
     }
 
-    public function content_jadwal(){
-        return view('jadwal.content');
+    public function content_jadwal($id){
+        $data = Event::find($id);
+        $sidebar = Event::get();
+        return view('jadwal.content',compact('data','sidebar'));
     }
 
     public function kuis(){
