@@ -97,7 +97,7 @@ class EventController extends Controller
             ]);
 
             if($request->file('gambar')){
-                $validateData['gambar'] = $request->file('gambar')->store('assets/modul','public');
+                $validateData['gambar'] = $request->file('gambar')->store('assets/event','public');
             }
     
             $event->update([                

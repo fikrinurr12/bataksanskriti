@@ -1,4 +1,4 @@
-<h2 class="text-dark mt-5"><a class="text-left" href="/modul"><i class="fa fa-arrow-left" aria-hidden="true"></i></a> Form Buat Event</h2>
+<h2 class="text-dark mt-5"><a class="text-left" href="/event"><i class="fa fa-arrow-left" aria-hidden="true"></i></a> Form Buat Event</h2>
 <form action="/event" method="post" class="me-3" enctype="multipart/form-data">
     @csrf    
     <div class="input-group my-3">

@@ -9,12 +9,12 @@
                 @auth
                 @if (count($kuis) > 0)
                 <!--- batas -->
-                @foreach($kuis as $index => $k)
                     <form action="{{ route('hasil_kuis') }}" method="post">
                         @csrf
                         @php
                             $no = 1; 
                         @endphp
+                        @foreach($kuis as $index => $k)
                         <div class="row kuis mb-5">
                             <p>{{ $index+1 }}. {{ $k->soal }}</p>
                             <div class="input-group mb-2">
@@ -42,9 +42,10 @@
                                 </div>
                             </div>
                         </div>
+                        @endforeach
                         <button type="submit" class="btn btn-danger">Submit Jawaban</button>
                     </form>
-                        @endforeach
+                        
                 @else
             <!--- batas -->
                 <h2>Kuis Belum Dibuat!</h2>
