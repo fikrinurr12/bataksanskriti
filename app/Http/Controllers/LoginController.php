@@ -11,16 +11,16 @@ class LoginController extends Controller
         return view('form/login');
     }
 
-    public function login(Request $request){
+    public function login(Request $request){        
         $credentials = $request->validate([
             'email' => 'required|email:dns|max:30',
-            'password' => 'required|min:5|max:50'
+            'password' => 'required|min:1|max:50'
         ]);        
 
-        if(Auth::attempt($credentials)){     
+        if(Auth::attempt($credentials)){            
             $request->session()->regenerate();              
             if(auth()->user()->role == 'admin'){
-                return redirect()->route('modul')->with('success','Login Success!');
+                return redirect()->route('dashboard')->with('success','Login Success!');
             }else{
                 return redirect()->route('landingpage')->with('success','Login Success!');
             }

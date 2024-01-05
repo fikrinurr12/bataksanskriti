@@ -43,8 +43,8 @@ class EventController extends Controller
         $validateData = $request->validate([
             'gambar' => 'required|file|image|max:10024',
             'tanggal' => 'required|date',
-            'lokasi' => 'required|min:5|max:50',
-            'deskripsi' => 'required|min:5|max:1000'
+            'lokasi' => 'required|min:5',
+            'deskripsi' => 'required|min:5'
         ]);
 
         if($request->file('gambar')){
@@ -92,8 +92,8 @@ class EventController extends Controller
             $validateData = $request->validate([
                 'gambar' => 'required|file|image|max:10024',
                 'tanggal' => 'required|date',
-                'lokasi' => 'required|min:5|max:50',
-                'deskripsi' => 'required|min:5|max:1000'     
+                'lokasi' => 'required|min:5',
+                'deskripsi' => 'required|min:5'     
             ]);
 
             if($request->file('gambar')){
@@ -110,8 +110,8 @@ class EventController extends Controller
         else{
             $validateData = $request->validate([              
                 'tanggal' => 'required|date',
-                'lokasi' => 'required|min:5|max:50',
-                'deskripsi' => 'required|min:5|max:1000'     
+                'lokasi' => 'required|min:5',
+                'deskripsi' => 'required|min:5'     
             ]);
     
             $event->update([                              

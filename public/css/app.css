@@ -154,3 +154,16 @@
     height: 20vh;
     object-fit: cover;
 }
+
+/* .input-group-text input:checked + .form-control {
+    border: 1px solid red;
+    background-color: #f8d7da;
+}
+
+.input-group-text input:checked + label {
+    color: red;
+    font-weight: bold;
+}
+.input-group-text.form-control:focus {
+    border: 1px var(--primary);
+} */

@@ -8,8 +8,7 @@
             <div class="modul col-12">
                 <h3 class="mb-4"><a href="{{ route('landingpage') }}"><i class="fa fa-arrow-left" aria-hidden="true"></i></a> Kuis Budaya<hr></h3>
                 @auth
-                <!--- batas -->
-                
+                <!--- batas -->                
                 <div class="row mb-5 row-cols-1 row-cols-md-4 g-4">
                   @foreach($modul as $md)
                   <div class="col">
