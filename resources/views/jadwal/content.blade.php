@@ -1,11 +1,11 @@
 @extends('../layout/landingpage')
-@section('title', 'Jadwal')
+@section('title', 'Event')
 @section('content')
 
 <div id="jadwal">
     <div class="container fullscreen pt-5 pb-5">
         <div class="row">
-            <h2><a class="fw-med text-black" href="{{ route('jadwal') }}"><i class="fa fa-arrow-left" aria-hidden="true"></i></a> Jadwal Budaya Batak</h2><hr>
+            <h2><a class="fw-med text-black" href="{{ route('jadwal') }}"><i class="fa fa-arrow-left" aria-hidden="true"></i></a> Event Budaya</h2><hr>
             <div class="col-8">
                 <div class="row">
                     <img src="{{ asset('storage') }}/{{ $data->gambar }}" alt="">

@@ -54,7 +54,7 @@
   <div class="container">
     <div class="row event text-center mt-auto align-items-end">
       <div class="col">
-        <h1>Jadwal Budaya</h1>
+        <h1>Event Budaya</h1>
       </div>
     </div>
     <div class="row mb-5">

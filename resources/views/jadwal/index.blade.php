@@ -1,5 +1,5 @@
 @extends('../layout/landingpage')
-@section('title', 'Modul')
+@section('title', 'Event')
 @section('content')
 
 <div id="modul">
