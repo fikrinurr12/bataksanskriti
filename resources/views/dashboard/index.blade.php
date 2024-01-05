@@ -1,3 +1,11 @@
+<?php
+$user = auth()->user();
+?>
+@if(!$user)
+  <div class="container">
+    <button class="btn btn-danger"><a href="{{ route('login') }}">Login Terlebih Dahulu!</a></button>
+  </div>
+@elseif($user->role == 'admin')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +14,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="{{ asset('fontawesome/css/all.min.css') }}">
     @vite(['resources/sass/app.scss','resources/js/app.js'])
     <style>
       :root {
@@ -15,7 +24,7 @@
       }
 
       .top{
-          margin-top: 100px;
+          margin-top: 25px;
       }
 
       .width-10{
@@ -70,6 +79,18 @@
         display: block;
       }
 
+      .bg-test{
+        background-color: #e9e9e9;
+      }
+
+      .max-height-fill{
+        min-height: 83vh;
+      }
+
+      .transform{
+        transform: translateX(-120px)
+      }
+
       @media screen and (max-width: 670px){
         .sidebar{
           display: none
@@ -85,31 +106,41 @@
 
         .title-responsive{
           display: none;
-        }
+        }        
       }
     </style>
     <title>Title</title>
 </head>
 <body>
-    <header>
-        @include('dashboard.components.navbar')
-    </header>
+    @include('dashboard.components.navbar')
     <main>
-        <div class="d-flex top">
-          <div class="fixed width-10 p-2 sidebar">    
+        <div class="top max-height-fill">
+          <div class="position-fixed width-10 p-2 sidebar">    
             @include('dashboard.components.sidebar')
           </div>
-          <div class="flex-fill margin-left-300 bg-light mb-3">
-            @includeWhen(Request::is('kuis'), 'dashboard.contents.kuis.index')
+          <div class="flex-fill margin-left-300 bg-light mb-3 bg bg-primary">
             @includeWhen(Request::is('modul'), 'dashboard.contents.modul.index')
             @includeWhen(Request::is('modul/create'), 'dashboard.contents.modul.create')
-            @if($data)
-              @includeWhen(Request::is('modul/'.$data->id.'/edit'), 'dashboard.contents.modul.edit')
-            @endif            
+            @if($data_modul)            
+              @includeWhen(Request::is('modul/'.$data_modul->id.'/edit'), 'dashboard.contents.modul.edit')
+            @endif
+            @includeWhen(Request::is('kuis'), 'dashboard.contents.kuis.index')
+            @includeWhen(Request::is('kuis/create*'), 'dashboard.contents.kuis.create')
+            @includeWhen(Request::is('kuis/lists*'), 'dashboard.contents.kuis.lists')            
+            @includeWhen(Request::is('kuis/edit*'), 'dashboard.contents.kuis.edit')
             @includeWhen(Request::is('event'), 'dashboard.contents.event.index')
-            @includeWhen(Request::is('dashboard'), 'dashboard.contents.dashboardpage')
+            @includeWhen(Request::is('event/create'), 'dashboard.contents.event.create')
+            @if($data_event)
+              @includeWhen(Request::is('event/'.$data_event->id.'/edit'), 'dashboard.contents.event.edit')
+            @endif
+            @includeWhen(Request::is('dashboard'), 'dashboard.contents.modul.index')
           </div>
         </div>
     </main>
 </body>
 </html>
+@else
+<div class="container">
+  <button class="btn btn-danger"><a href="{{ route('landingpage') }}">Kembali Ke Halaman Utama!</a></button>
+</div>
+@endif

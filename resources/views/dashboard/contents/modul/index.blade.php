@@ -12,7 +12,7 @@
               $target = '#detail-'.$data->id
             @endphp
             {!! strlen($data->deskripsi) > 20 ? 
-            substr($data->deskripsi,0,20) . "<button type='button' class='text-primary' data-bs-toggle='modal' data-bs-target='$target'>...Lihat Selengkapnya</button>": $data->deskripsi !!}
+            substr($data->deskripsi,0,20) . "<button type='button' style='border: none; background-color: none;' class='text-primary bg-transparent' data-bs-toggle='modal' data-bs-target='$target'>...Lihat Selengkapnya</button>": $data->deskripsi !!}
           </p>
         </div>
         <div class="grid-button px-3 py-3">
@@ -23,7 +23,7 @@
           <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#{{'hapus-'.$data->id}}">
             Hapus
           </button>
-          <a href="" class="d-flex align-items-center justify-content-center py-1 bg-main rounded text-white text-decoration-none text-center">Buat Kuis</a>          
+          <a href="/kuis/create/{{$data->id}}" class="d-flex align-items-center justify-content-center py-1 bg-main rounded text-white text-decoration-none text-center">Buat Kuis</a>          
         </div>
       </div>
     </div>        
@@ -38,7 +38,17 @@
           </div>
           <div class="modal-body">
             @if($data->komentar)
-              <h5>Ada Komentar</h5>
+              @foreach ($data->komentar as $d)
+                  <div class="row">
+                    <div class="col-1">
+                      <img src="{{ asset('assets/users/1.jpg') }}" alt="" class="img-fluid rounded-circle">
+                    </div>
+                    <div class="col-11">
+                      <b>{{ $d->user->nama_lengkap }}</b>
+                      <p>{{ $d->komentar }}</p>
+                    </div>
+                  </div>
+              @endforeach
             @else
               <h5>Tidak ada komentar</h5>
             @endif
@@ -79,7 +89,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <h3>Yakin ingin menghapus {{$data->nama_modul}} ?</h3>
+            <h5>Yakin ingin menghapus {{$data->nama_modul}} ?</h5>
           </div>
           <div class="modal-footer">
             <form action="/modul/{{$data->id}}" method="post">

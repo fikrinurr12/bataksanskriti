@@ -17,7 +17,8 @@ class ModulController extends Controller
         //
         return view('dashboard.index', [
             'datas' => Modul::get(),
-            'data' => null
+            'data_modul' => null,
+            'data_event' => null,
         ]);
     }
 
@@ -28,7 +29,8 @@ class ModulController extends Controller
     {
         //
         return view('dashboard.index', [
-            'data' => null
+            'data_modul' => null,
+            'data_event' => null
         ]);
     }
 
@@ -38,8 +40,7 @@ class ModulController extends Controller
     public function store(Request $request)
     {
         //
-        $user = auth()->user();        
-        
+        $user = auth()->user();
         $validateData = $request->validate([
             'nama_modul' => 'required|min:5|max:50',
             'gambar' => 'required|file|image|max:10024',
@@ -47,7 +48,7 @@ class ModulController extends Controller
         ]);                
 
         if($request->file('gambar')){
-            $validateData['gambar'] = $request->file('gambar')->store('modul');
+            $validateData['gambar'] = $request->file('gambar')->store('assets/modul','public');
         }
 
         Modul::create([
@@ -75,7 +76,8 @@ class ModulController extends Controller
     {
         //
         return view('dashboard.index', [
-            'data' => $modul
+            'data_modul' => $modul,            
+            'data_event' => null,
         ]);
     }
 
@@ -92,6 +94,10 @@ class ModulController extends Controller
                 'deskripsi' => ['required','min:10','max:1000'],     
             ]);
     
+            if($request->file('gambar')){
+                $validateData['gambar'] = $request->file('gambar')->store('assets/modul','public');
+            }
+
             $modul->update([
                 'nama_modul' => $validateData['nama_modul'],
                 'gambar' => $validateData['gambar'],
@@ -120,7 +126,7 @@ class ModulController extends Controller
     {
         //        
         Modul::destroy($modul->id);
-        Storage::disk('local')->delete(['public/'.$modul->gambar]);
+        Storage::disk('local')->delete(['assets/modul/'.$modul->gambar]);
         return redirect('/modul')->with('success', 'Modul Berhasil Dihapus !');
     }
 }

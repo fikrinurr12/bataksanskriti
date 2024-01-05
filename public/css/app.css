@@ -118,7 +118,18 @@
 
 .modul img {
     width: 100%;
-    height: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.modul-content img {
+    width: 100%;
+}
+
+.modul-sidebar img,
+.jadwal-sidebar img {
+    width: 100%;
+    height: 100px;
     object-fit: cover;
 }
 
@@ -137,13 +148,14 @@
     height: 40px;
 }
 
-/*--- kuis ---*/
-.card-img-top.cover-kuis {
+/*-- kuis --*/
+.card.kuis img {
     width: 100%;
     height: 20vh;
     object-fit: cover;
 }
-.input-group-text input:checked + .form-control {
+
+/* .input-group-text input:checked + .form-control {
     border: 1px solid red;
     background-color: #f8d7da;
 }
@@ -154,4 +166,4 @@
 }
 .input-group-text.form-control:focus {
     border: 1px var(--primary);
-}
+} */

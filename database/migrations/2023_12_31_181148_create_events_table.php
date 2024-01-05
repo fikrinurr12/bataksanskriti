@@ -13,10 +13,11 @@ return new class extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
+            $table->foreignId('user_id');                  
             $table->string('gambar');
-            $table->date('tanggal');
+            $table->datetime('tanggal');
             $table->string('lokasi');
+            $table->text('deskripsi');
             $table->timestamps();
         });
     }

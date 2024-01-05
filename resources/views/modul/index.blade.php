@@ -8,81 +8,23 @@
             <div class="modul col-12">
                 <h3 class="mb-4"><a href="{{ route('landingpage') }}"><i class="fa fa-arrow-left" aria-hidden="true"></i></a> Modul Budaya<hr></h3>
                 <!--- batas -->
+                @foreach ($data as $d)
                 <div class="row mb-5">
                     <div class="col-4">
-                        <img src="{{ asset('assets/img/event1.jpg') }}" alt="">
+                        <img src="{{ asset('storage') }}/{{$d->gambar}}" alt="">
                     </div>
                     <div class="col-8">
                         <div class="row">
-                            <h2>Modul tentang Batak</h2>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis ex veniam alias odio ipsum reprehenderit labore architecto inventore magni, natus voluptatem rerum. Placeat quibusdam non exercitationem amet rem eius repellat!</p>
+                            <h2>{{ $d->nama_modul}}</h2>
+                            <p>{{ $d->deskripsi }}</p>
                         </div>
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                            <a href="{{ route('isi_modul') }}">
+                            <a href="{{ route('isi_modul', $d->id) }}">
                                 <button class="btn btn-danger" type="button">Lihat Selengkapnya</button></a>    
                         </div>
                     </div>
                 </div>
-                <div class="row mb-5">
-                    <div class="col-4">
-                        <img src="{{ asset('assets/img/event3.jpg') }}" alt="">
-                    </div>
-                    <div class="col-8">
-                        <div class="row">
-                            <h2>Modul tentang Batak</h2>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis ex veniam alias odio ipsum reprehenderit labore architecto inventore magni, natus voluptatem rerum. Placeat quibusdam non exercitationem amet rem eius repellat!</p>
-                        </div>
-                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                            <a href="{{ route('isi_modul') }}">
-                                <button class="btn btn-danger" type="button">Lihat Selengkapnya</button></a>    
-                        </div>
-                    </div>
-                </div>
-                <div class="row mb-5">
-                    <div class="col-4">
-                        <img src="{{ asset('assets/img/event2.png') }}" alt="">
-                    </div>
-                    <div class="col-8">
-                        <div class="row">
-                            <h2>Modul tentang Batak</h2>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis ex veniam alias odio ipsum reprehenderit labore architecto inventore magni, natus voluptatem rerum. Placeat quibusdam non exercitationem amet rem eius repellat!</p>
-                        </div>
-                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                            <a href="{{ route('isi_modul') }}">
-                                <button class="btn btn-danger" type="button">Lihat Selengkapnya</button></a>    
-                        </div>
-                    </div>
-                </div>
-                <div class="row mb-5">
-                    <div class="col-4">
-                        <img src="{{ asset('assets/img/event1.jpg') }}" alt="">
-                    </div>
-                    <div class="col-8">
-                        <div class="row">
-                            <h2>Modul tentang Batak</h2>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis ex veniam alias odio ipsum reprehenderit labore architecto inventore magni, natus voluptatem rerum. Placeat quibusdam non exercitationem amet rem eius repellat!</p>
-                        </div>
-                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                            <a href="{{ route('isi_modul') }}">
-                                <button class="btn btn-danger" type="button">Lihat Selengkapnya</button></a>    
-                        </div>
-                    </div>
-                </div>
-                <div class="row mb-5">
-                    <div class="col-4">
-                        <img src="{{ asset('assets/img/event3.jpg') }}" alt="">
-                    </div>
-                    <div class="col-8">
-                        <div class="row">
-                            <h2>Modul tentang Batak</h2>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis ex veniam alias odio ipsum reprehenderit labore architecto inventore magni, natus voluptatem rerum. Placeat quibusdam non exercitationem amet rem eius repellat!</p>
-                        </div>
-                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                            <a href="{{ route('isi_modul') }}">
-                                <button class="btn btn-danger" type="button">Lihat Selengkapnya</button></a>    
-                        </div>
-                    </div>
-                </div>               
+                @endforeach
                 <!--- batas -->
                 <nav aria-label="Page navigation example">
                     <ul class="pagination justify-content-center">

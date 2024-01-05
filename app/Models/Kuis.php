@@ -12,12 +12,23 @@ use Illuminate\Database\Eloquent\Model;
 class Kuis extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'user_id',
+        'modul_id',
+        'soal',
+        'opsi_a',
+        'opsi_b',
+        'opsi_c',
+        'opsi_d',
+        'jawaban'
+    ];
+
     public function user(){
         return $this->belongsTo(User::class);
     }
 
     public function modul(){
-        return $this->belongsTo(Modul::class);
+        return $this->belongsTo(Modul::class, 'id');
     }
 
     public function skor(){

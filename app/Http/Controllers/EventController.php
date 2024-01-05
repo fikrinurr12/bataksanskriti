@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Event;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class EventController extends Controller
 {
@@ -12,9 +13,11 @@ class EventController extends Controller
      */
     public function index()
     {
-        //
+        //        
         return view('dashboard.index', [
-            'data' => null
+            'data_modul' => null,
+            'data_event' => null,
+            'datas' => Event::all()
         ]);
     }
 
@@ -24,6 +27,10 @@ class EventController extends Controller
     public function create()
     {
         //
+        return view('dashboard.index', [
+            'data_modul' => null,
+            'data_event' => null
+        ]);
     }
 
     /**
@@ -31,7 +38,28 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //        
+        $id = auth()->user()->id;
+        $validateData = $request->validate([
+            'gambar' => 'required|file|image|max:10024',
+            'tanggal' => 'required|date',
+            'lokasi' => 'required|min:5|max:50',
+            'deskripsi' => 'required|min:5|max:1000'
+        ]);
+
+        if($request->file('gambar')){
+            $validateData['gambar'] = $request->file('gambar')->store('assets/event','public');
+        }
+
+        Event::create([
+            'user_id' => $id,
+            'gambar' => $validateData['gambar'],
+            'tanggal' => $validateData['tanggal'],
+            'lokasi' => $validateData['lokasi'],
+            'deskripsi' => $validateData['deskripsi']
+        ]);
+
+        return redirect('/event')->with('success', 'Event berhasil ditambahkan !');
     }
 
     /**
@@ -39,7 +67,7 @@ class EventController extends Controller
      */
     public function show(Event $event)
     {
-        //
+        //        
     }
 
     /**
@@ -48,6 +76,10 @@ class EventController extends Controller
     public function edit(Event $event)
     {
         //
+        return view('dashboard.index', [
+            'data_modul' => null,
+            'data_event' => $event
+        ]);
     }
 
     /**
@@ -56,6 +88,40 @@ class EventController extends Controller
     public function update(Request $request, Event $event)
     {
         //
+        if($request['gambar']){
+            $validateData = $request->validate([
+                'gambar' => 'required|file|image|max:10024',
+                'tanggal' => 'required|date',
+                'lokasi' => 'required|min:5|max:50',
+                'deskripsi' => 'required|min:5|max:1000'     
+            ]);
+
+            if($request->file('gambar')){
+                $validateData['gambar'] = $request->file('gambar')->store('assets/modul','public');
+            }
+    
+            $event->update([                
+                'gambar' => $validateData['gambar'],
+                'tanggal' => $validateData['tanggal'],
+                'lokasi' => $validateData['lokasi'],
+                'deskripsi' => $validateData['deskripsi']
+            ]);
+        }
+        else{
+            $validateData = $request->validate([              
+                'tanggal' => 'required|date',
+                'lokasi' => 'required|min:5|max:50',
+                'deskripsi' => 'required|min:5|max:1000'     
+            ]);
+    
+            $event->update([                              
+                'tanggal' => $validateData['tanggal'],
+                'lokasi' => $validateData['lokasi'],
+                'deskripsi' => $validateData['deskripsi']
+            ]);
+        }
+
+        return redirect('/event')->with('success', 'Event Berhasil di Update!');
     }
 
     /**
