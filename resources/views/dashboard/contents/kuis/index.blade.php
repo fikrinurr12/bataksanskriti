@@ -1,4 +1,5 @@
-<div class="row row-cols-1 row-cols-md-2 g-4 mt-3 me-1">
+<a href="/modul" class="px-5 py-2 btn btn-danger mt-3">Buat Kuis</a>
+<div class="row row-cols-1 row-cols-md-3 g-4 mt-3 me-1">
   @foreach($datas as $data)
   <div class="col-sm">
     <div class="card px-0" style="min-height: 150px;">

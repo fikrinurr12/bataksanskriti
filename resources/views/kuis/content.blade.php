@@ -11,10 +11,12 @@
                 <!--- batas -->
                 <form action="/kuis-view/result/{{$modul->id}}" method="post">
                 @foreach($kuis as $index => $k)
+                    
                         @csrf
                         @php
                             $no = 1; 
                         @endphp
+                        @foreach($kuis as $index => $k)
                         <div class="row kuis mb-5">
                             <p>{{ $index+1 }}. {{ $k->soal }}</p>
                             <div class="input-group mb-2">

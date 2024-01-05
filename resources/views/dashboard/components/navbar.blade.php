@@ -1,4 +1,4 @@
-<nav class="navbar sticky-top bg-body-tertiary px-2 py-3">
+<nav class="navbar sticky-top bg-body-tertiary px-2 py-3 shadow-sm">
     <div class="container-fluid d-flex-between">
         <a class="navbar-brand d-flex gap-2" href="{{ route('landingpage') }}">
             <img class="rounded-pill" src="{{ asset('assets/logo/logo.png') }}" width="35em" alt="">
@@ -9,7 +9,6 @@
                 <img src="{{ asset('assets/users/1.jpg') }}" width="35em" alt="" class="rounded-pill border border-2 border-danger profil dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">              
                 <ul class="dropdown-menu transform">
                   <li>
-                    <a href="/profile" class="dropdown-item">Profile</a>
                     <form action="/logout" method="post">
                         @csrf
                         <button class="dropdown-item" href="/logout">Logout</button>

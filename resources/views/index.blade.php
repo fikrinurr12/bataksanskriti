@@ -70,7 +70,6 @@
             </div>
           </a>
           @endforeach
-
           <!-- Add more carousel items with sets of mini cards as needed -->
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#cardSlider" data-bs-slide="prev">

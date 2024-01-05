@@ -1,4 +1,4 @@
-<h2 class="text-dark mt-5"><a class="text-left" href="/modul"><i class="fa fa-arrow-left" aria-hidden="true"></i></a> Form Buat Modul</h2>
+<h2 class="text-dark pt-4"><a class="text-left" href="/modul"><i class="fa fa-arrow-left text-danger" aria-hidden="true"></i></a> Form Buat Modul</h2>
 <form action="/modul" method="post" class="me-3" enctype="multipart/form-data">
     @csrf
     <div class="input-group flex-nowrap my-3">
