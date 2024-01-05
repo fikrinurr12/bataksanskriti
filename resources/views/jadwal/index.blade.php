@@ -17,7 +17,7 @@
                         <div class="row">
                             <h2>{{ $d->lokasi }}</h2>
                             <b>By : {{ $d->user->nama_lengkap }}</b>
-                            <p>{{ $d->deskripsi }}</p>
+                            <p>{{ strlen($d->deskripsi) > 20 ? substr($d->deskripsi, 0, 20) : $d->deskripsi }}</p>
                         </div>
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                             <a href="{{ route('isi_jadwal',$d->id) }}">
