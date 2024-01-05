@@ -86,28 +86,16 @@
     <footer class="container">
         <div class="row  pb-2">
           <!-- About Column -->
-          <div class="col-md-4">
+          <div class="col-md-6">
             <h5>About</h5>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat reiciendis cupiditate nam ex consequuntur ab consequatur vitae in, molestiae est ullam necessitatibus dolor ut, accusantium explicabo sequi aliquam dolorum dolorem.</p>
-          </div>
-      
-          <!-- List Modul Column -->
-          <div class="col-md-4">
-            <h5 class="text-light">List Modul</h5>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item bg-dark text-light">Modul 1</li>
-                <li class="list-group-item bg-dark text-light">Modul 2</li>
-                <li class="list-group-item bg-dark text-light">Modul 3</li>
-                <li class="list-group-item bg-dark text-light">Modul 4</li>
-                <li class="list-group-item bg-dark text-light">Modul 5</li>
-            </ul>
+            <p>Eksplorasi kekayaan dan keindahan Budaya Batak! Sumber informasi yang lengkap, kami membawa Anda dalam perjalanan mendalam untuk menggali keunikannya. Dari sejarah yang gemilang hingga tradisi yang kaya, temukan landasan yang mendalam untuk meresapi pesona kebudayaan Batak. Bergabunglah dengan kami dalam merayakan dan melestarikan kearifan lokal yang menjadi pewaris budaya yang penuh makna.</p>
           </div>
       
           <!-- Contact Column -->
-          <div class="col-md-4">
+          <div class="col-md-6">
             <h5>Contact</h5>
-            <p>Email: example@example.com</p>
-            <p>Phone: +123 456 7890</p>
+            <p>Email: admin@gmail.com</p>
+            <p>Phone: +62-888-222-999</p>
             <!-- Add more contact information as needed -->
           </div>
         </div>

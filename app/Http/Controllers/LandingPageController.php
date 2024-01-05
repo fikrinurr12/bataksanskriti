@@ -37,35 +37,4 @@ class LandingPageController extends Controller
         $sidebar = Event::get();
         return view('jadwal.content',compact('data','sidebar'));
     }
-
-    public function kuis(){
-        $modul = Modul::all();
-        return view('kuis.index', compact('modul'));
-    }
-
-    public function content_kuis(Modul $id){
-        $modul = $id;
-        $kuis = $id->kuis;
-        return view('kuis.content', compact('kuis','modul'));
-    }
-
-    public function hasil_kuis(Request $request){
-        $modul = Modul::all();
-        return view('kuis.result', compact('modul'));
-    }
-
-    public function komentar(Request $request){
-        $validateData = $request->validate([
-            'komentar' => 'required|min:5'
-        ]);
-
-        Komentar::create([
-            'user_id' => auth()->user()->id,
-            'modul_id' => $request->modul_id,
-            'komentar' => $validateData['komentar']
-        ]);
-
-        return redirect()->route('isi_modul', $request->modul_id)->with('success', 'Berhasil Komentar!');
-    }   
-
 }

@@ -1,4 +1,5 @@
-<div class="list-group pe-3">    
+<h2 class="text-dark pt-4"><a class="text-left" href="/kuis"><i class="fa fa-arrow-left text-danger" aria-hidden="true"></i></a> List Kuis</h2>
+<div class="list-group pe-3"> 
     @foreach($kuis_list as $index => $list)        
     <div href="#" class="list-group-item list-group-item-action" aria-current="true">
       <div class="d-flex w-100 justify-content-between">
