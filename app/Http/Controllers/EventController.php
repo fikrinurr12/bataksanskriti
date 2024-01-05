@@ -17,7 +17,7 @@ class EventController extends Controller
         return view('dashboard.index', [
             'data_modul' => null,
             'data_event' => null,
-            'datas' => Event::all()
+            'datas' => Event::all(),
         ]);
     }
 
