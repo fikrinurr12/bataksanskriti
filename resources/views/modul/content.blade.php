@@ -2,7 +2,7 @@
 @section('title', 'Modul')
 @section('content')
 
-<div id="modul">
+<div id="kuis">
     <div class="container fullscreen pt-5 pb-5">
         <div class="row">
             <h2><a class="fw-med text-black" href="{{ route('modul') }}"><i class="fa fa-arrow-left" aria-hidden="true"></i></a> {{ $data->nama_modul }}</h2><hr>

@@ -69,8 +69,30 @@
               </div>
             </div>
           </a>
-          @endforeach
-
+          <a href="{{ route('jadwal') }}">
+            <div class="carousel-item">
+              <div class="card mini-card mx-auto">
+                <!-- Mini card content for the second carousel item -->
+                <img src="{{ asset('assets/img/event2.png') }}" class="card-img-top" alt="Image 2">
+                <div class="card-body">
+                  <h5 class="card-title">Card 2</h5>
+                  <p class="card-text">Some text for Card 2.</p>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a href="{{ route('jadwal') }}">
+            <div class="carousel-item">
+              <div class="card mini-card mx-auto">
+                <!-- Mini card content for the third carousel item -->
+                <img src="{{ asset('assets/img/event3.jpg') }}" class="card-img-top" alt="Image 3">
+                <div class="card-body">
+                  <h5 class="card-title">Card 3</h5>
+                  <p class="card-text">Some text for Card 3.</p>
+                </div>
+              </div>
+            </div>
+          </a>
           <!-- Add more carousel items with sets of mini cards as needed -->
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#cardSlider" data-bs-slide="prev">
