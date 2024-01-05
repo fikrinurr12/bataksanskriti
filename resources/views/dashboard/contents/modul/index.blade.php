@@ -5,7 +5,7 @@
   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
 @endif
-<div class="row row-cols-1 row-cols-md-3 g-4 mt-3 me-1">
+<div class="row row-cols-1 row-cols-md-2 g-4 mt-3 me-1">
     @foreach($datas as $data)
     <div class="col">
       <div class="card">
