@@ -1,9 +1,12 @@
-<a href="/event/create" class="px-5 py-2 btn btn-danger mt-3">Buat Event</a>
+<title>Dashboard | Event</title>
+<a href="/event/create" class="px-5 py-2 bg-main rounded text-white text-decoration-none">Buat Event</a>
+@if(session()->has('success'))
 <div class="alert alert-success alert-dismissible fade show mt-3 me-2" role="alert">
-  <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+  {{session('success')}}
   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
-<div class="row row-cols-1 row-cols-md-3 g-4 mt-3 me-1">
+@endif
+<div class="row row-cols-1 row-cols-md-2 g-4 mt-3 me-1">
     @foreach($datas as $data)
     <div class="col">
       <div class="card">
