@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Kuis;
+use App\Models\Skor;
+use App\Models\Event;
 use App\Models\Modul;
 use App\Models\Komentar;
-use App\Models\Event;
+use Illuminate\Http\Request;
 
 class LandingPageController extends Controller
 {
@@ -49,9 +50,26 @@ class LandingPageController extends Controller
         return view('kuis.content', compact('kuis','modul'));
     }
 
-    public function hasil_kuis(Request $request){
-        $modul = Modul::all();
-        return view('kuis.result', compact('modul'));
+    public function hasil_kuis(Request $request, Modul $modul){
+        $hasil = 0;
+        $user_id = auth()->user()->id;                   
+        $kuis = $modul->kuis;       
+        $moduls = Modul::all();
+        foreach($kuis as $array => $k){                        
+            $index = $array+1;
+            if($request['answer'.$index] == $k->jawaban){
+                $nilai = 100/count($kuis);
+                $hasil+=$nilai;
+            }
+        }
+
+        Skor::create([
+            'user_id' => $user_id,
+            'modul_id' => $modul->id,
+            'poin' => $hasil
+        ]);
+
+        return view('kuis.result', compact('moduls', 'hasil'));
     }
 
     public function komentar(Request $request){
