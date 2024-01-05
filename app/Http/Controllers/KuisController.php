@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Kuis;
 use App\Models\Modul;
+use App\Models\Skor;
 use Illuminate\Http\Request;
 
 class KuisController extends Controller
@@ -13,7 +14,8 @@ class KuisController extends Controller
         return view('dashboard.index', [
             'data_modul' => null,
             'data_event' => null,
-            'datas' => Modul::get()
+            'datas' => Modul::get(),
+            'skors' => Skor::get()
         ]);
     }
 
