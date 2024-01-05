@@ -119,7 +119,7 @@ $user = auth()->user();
             @include('dashboard.components.sidebar')
           </div>
           <div class="flex-fill margin-left-300 bg-light mb-3">
-            <div class="container">
+            <div class="container pt-3">
               @includeWhen(Request::is('modul'), 'dashboard.contents.modul.index')
               @includeWhen(Request::is('modul/create'), 'dashboard.contents.modul.create')
               @if($data_modul)            

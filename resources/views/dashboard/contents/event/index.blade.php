@@ -1,4 +1,4 @@
-<a href="/event/create" class="px-5 py-2 bg-main rounded text-white text-decoration-none">Buat Event</a>
+<a href="/event/create" class="px-5 py-2 bg-main rounded text-white text-decoration-none mt-3">Buat Event</a>
 <div class="alert alert-success alert-dismissible fade show mt-3 me-2" role="alert">
   <strong>Holy guacamole!</strong> You should check in on some of those fields below.
   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
