@@ -1,5 +1,5 @@
-<a href="/event/create" class="px-5 py-2 bg-main rounded text-white text-decoration-none">Buat Event</a>
-<div class="row row-cols-1 row-cols-md-2 g-4 mt-3 me-1">
+<a href="/event/create" class="px-5 py-2 btn btn-danger mt-3">Buat Event</a>
+<div class="row row-cols-1 row-cols-md-3 g-4 mt-3 me-1">
     @foreach($datas as $data)
     <div class="col">
       <div class="card">

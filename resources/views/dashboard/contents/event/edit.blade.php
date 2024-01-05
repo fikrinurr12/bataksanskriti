@@ -1,4 +1,4 @@
-<h2 class="text-dark mt-5"><a class="text-left" href="/event"><i class="fa fa-arrow-left" aria-hidden="true"></i></a> Form Edit Event</h2>
+<h2 class="text-dark pt-4"><a class="text-left" href="/event"><i class="fa fa-arrow-left text-danger" aria-hidden="true"></i></a> Form Edit Event</h2>
 <form action="/event/{{$data_event->id}}" method="post" class="me-3" enctype="multipart/form-data">
     @method('put')
     @csrf    

@@ -1,4 +1,4 @@
-<h2 class="text-dark mt-5"><a class="text-left" href="/kuis"><i class="fa fa-arrow-left" aria-hidden="true"></i></a> Form Buat Kuis</h2>
+<h2 class="text-dark pt-4"><a class="text-left" href="/kuis"><i class="fa fa-arrow-left text-danger" aria-hidden="true"></i></a> Form Buat Kuis</h2>
 <form action="/kuis/update/{{$data_kuis->id}}" method="post" class="me-3" enctype="multipart/form-data">
     @method('put')
     @csrf

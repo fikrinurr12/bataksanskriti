@@ -114,26 +114,28 @@ $user = auth()->user();
 <body>
     @include('dashboard.components.navbar')
     <main>
-        <div class="top max-height-fill">
-          <div class="position-fixed width-10 p-2 sidebar">    
+        <div class="max-height-fill">
+          <div class="position-fixed width-10 p-2 sidebar h-100 bg-dark text-white">    
             @include('dashboard.components.sidebar')
           </div>
-          <div class="flex-fill margin-left-300 bg-light mb-3 bg bg-primary">
-            @includeWhen(Request::is('modul'), 'dashboard.contents.modul.index')
-            @includeWhen(Request::is('modul/create'), 'dashboard.contents.modul.create')
-            @if($data_modul)            
-              @includeWhen(Request::is('modul/'.$data_modul->id.'/edit'), 'dashboard.contents.modul.edit')
-            @endif
-            @includeWhen(Request::is('kuis'), 'dashboard.contents.kuis.index')
-            @includeWhen(Request::is('kuis/create*'), 'dashboard.contents.kuis.create')
-            @includeWhen(Request::is('kuis/lists*'), 'dashboard.contents.kuis.lists')            
-            @includeWhen(Request::is('kuis/edit*'), 'dashboard.contents.kuis.edit')
-            @includeWhen(Request::is('event'), 'dashboard.contents.event.index')
-            @includeWhen(Request::is('event/create'), 'dashboard.contents.event.create')
-            @if($data_event)
-              @includeWhen(Request::is('event/'.$data_event->id.'/edit'), 'dashboard.contents.event.edit')
-            @endif
-            @includeWhen(Request::is('dashboard'), 'dashboard.contents.modul.index')
+          <div class="flex-fill margin-left-300 bg-light mb-3">
+            <div class="container">
+              @includeWhen(Request::is('modul'), 'dashboard.contents.modul.index')
+              @includeWhen(Request::is('modul/create'), 'dashboard.contents.modul.create')
+              @if($data_modul)            
+                @includeWhen(Request::is('modul/'.$data_modul->id.'/edit'), 'dashboard.contents.modul.edit')
+              @endif
+              @includeWhen(Request::is('kuis'), 'dashboard.contents.kuis.index')
+              @includeWhen(Request::is('kuis/create*'), 'dashboard.contents.kuis.create')
+              @includeWhen(Request::is('kuis/lists*'), 'dashboard.contents.kuis.lists')            
+              @includeWhen(Request::is('kuis/edit*'), 'dashboard.contents.kuis.edit')
+              @includeWhen(Request::is('event'), 'dashboard.contents.event.index')
+              @includeWhen(Request::is('event/create'), 'dashboard.contents.event.create')
+              @if($data_event)
+                @includeWhen(Request::is('event/'.$data_event->id.'/edit'), 'dashboard.contents.event.edit')
+              @endif
+              @includeWhen(Request::is('dashboard'), 'dashboard.contents.modul.index')
+            </div>
           </div>
         </div>
     </main>
