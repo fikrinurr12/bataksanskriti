@@ -109,7 +109,6 @@ $user = auth()->user();
         }        
       }
     </style>
-    <title>Title</title>
 </head>
 <body>
     @include('dashboard.components.navbar')

@@ -1,3 +1,4 @@
+<title>Dashboard | Event</title>
 <a href="/event/create" class="px-5 py-2 bg-main rounded text-white text-decoration-none">Buat Event</a>
 @if(session()->has('success'))
 <div class="alert alert-success alert-dismissible fade show mt-3 me-2" role="alert">

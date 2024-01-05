@@ -1,3 +1,4 @@
+<title>Dashboard | Event - Create</title>
 <h2 class="text-dark pt-4"><a class="text-left" href="/event"><i class="fa fa-arrow-left text-danger" aria-hidden="true"></i></a> Form Buat Event</h2>
 <form action="/event" method="post" class="me-3" enctype="multipart/form-data">
     @csrf    

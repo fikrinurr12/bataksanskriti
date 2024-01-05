@@ -1,3 +1,4 @@
+<title>Dashboard | Kuis</title>
 <a href="/modul" class="px-5 py-2 btn btn-danger mt-3">Buat Kuis</a>
 <button type='button' class='px-5 py-2 btn btn-primary mt-3' data-bs-toggle='modal' data-bs-target='#detail-skor'>Lihat Skor</button>
 <div class="row row-cols-1 row-cols-md-3 g-4 mt-3 me-1">

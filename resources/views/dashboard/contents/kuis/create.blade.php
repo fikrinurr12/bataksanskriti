@@ -1,3 +1,4 @@
+<title>Dashboard | Kuis - Create</title>
 @if(session()->has('success'))
 <div class="alert alert-success alert-dismissible fade show mt-3 me-2" role="alert">
   {{session('success')}}

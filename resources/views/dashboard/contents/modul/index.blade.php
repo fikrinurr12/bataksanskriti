@@ -1,3 +1,4 @@
+<title>Dashboard | Modul</title>
 <a href="/modul/create" class="px-5 py-2 btn btn-danger mt-3">Buat Modul</a>
 @if(session()->has('success'))
 <div class="alert alert-success alert-dismissible fade show mt-3 me-2" role="alert">

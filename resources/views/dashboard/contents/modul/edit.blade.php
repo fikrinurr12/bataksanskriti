@@ -1,3 +1,4 @@
+<title>Dashboard | Modul - Edit</title>
 <h2 class="text-dark pt-4"><a class="text-left" href="/modul"><i class="fa fa-arrow-left text-danger" aria-hidden="true"></i></a> Form Edit Modul</h2>
 <form action="/modul/{{$data_modul->id}}" method="post" class="me-3" enctype="multipart/form-data">
     @method('put')
