@@ -130,5 +130,8 @@ class EventController extends Controller
     public function destroy(Event $event)
     {
         //
+        Event::destroy($event->id);
+        Storage::disk('local')->delete(['assets/event/'.$event->gambar]);
+        return redirect('/event')->with('success', 'Modul Berhasil Dihapus !');
     }
 }
