@@ -56,7 +56,7 @@ class LandingPageController extends Controller
 
     public function komentar(Request $request){
         $validateData = $request->validate([
-            'komentar' => 'required|min:5|max:50'
+            'komentar' => 'required|min:5'
         ]);
 
         Komentar::create([

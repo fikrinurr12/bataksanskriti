@@ -28,12 +28,12 @@ class KuisController extends Controller
     public function store(Request $request){
         $id = $request->modul_id;
         $validateData = $request->validate([            
-            'soal' => 'required|min:5|max:100',
-            'opsi_a' => 'required|min:1|max:100',            
-            'opsi_b' => 'required|min:1|max:100',            
-            'opsi_c' => 'required|min:1|max:100',            
-            'opsi_d' => 'required|min:1|max:100',
-            'jawaban' => 'required|min:1|max:100'
+            'soal' => 'required|min:5',
+            'opsi_a' => 'required|min:1',            
+            'opsi_b' => 'required|min:1',            
+            'opsi_c' => 'required|min:1',            
+            'opsi_d' => 'required|min:1',
+            'jawaban' => 'required|min:1'
         ]);    
 
         kuis::create([
@@ -60,12 +60,12 @@ class KuisController extends Controller
 
     public function update(Request $request, Kuis $kuis){
         $validateData = $request->validate([            
-            'soal' => 'required|min:5|max:100',
-            'opsi_a' => 'required|min:1|max:100',            
-            'opsi_b' => 'required|min:1|max:100',            
-            'opsi_c' => 'required|min:1|max:100',            
-            'opsi_d' => 'required|min:1|max:100',
-            'jawaban' => 'required|min:1|max:100'
+            'soal' => 'required|min:5',
+            'opsi_a' => 'required|min:1',            
+            'opsi_b' => 'required|min:1',            
+            'opsi_c' => 'required|min:1',            
+            'opsi_d' => 'required|min:1',
+            'jawaban' => 'required|min:1'
         ]);
 
         $kuis->update([

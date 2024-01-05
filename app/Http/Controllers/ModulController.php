@@ -42,9 +42,9 @@ class ModulController extends Controller
         //
         $user = auth()->user();
         $validateData = $request->validate([
-            'nama_modul' => 'required|min:5|max:50',
+            'nama_modul' => 'required|min:5',
             'gambar' => 'required|file|image|max:10024',
-            'deskripsi' => 'required|min:10|max:1000'
+            'deskripsi' => 'required|min:10'
         ]);                
 
         if($request->file('gambar')){
@@ -89,9 +89,9 @@ class ModulController extends Controller
         //
         if($request['gambar']){
             $validateData = $request->validate([
-                'nama_modul' => ['required','min:5','max:50'],
+                'nama_modul' => ['required','min:5'],
                 'gambar' => ['required', 'file', 'image', 'max:10024'],
-                'deskripsi' => ['required','min:10','max:1000'],     
+                'deskripsi' => ['required','min:10'],     
             ]);
     
             if($request->file('gambar')){
@@ -106,8 +106,8 @@ class ModulController extends Controller
         }
         else{
             $validateData = $request->validate([
-                'nama_modul' => ['required','min:5','max:50'],                
-                'deskripsi' => ['required','min:10','max:1000'],     
+                'nama_modul' => ['required','min:5'],                
+                'deskripsi' => ['required','min:10'],     
             ]);
     
             $modul->update([
