@@ -11,8 +11,13 @@
           <h1 class="fs-1 fw-bold">
             Kembangkan Budaya Batak Melalui Digitalisasi Modern Untuk Generasi Penerus Budaya.
           </h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto explicabo distinctio sunt repellat expedita repudiandae porro accusamus accusantium perspiciatis! Necessitatibus debitis quos omnis tempore expedita natus consequuntur porro similique deserunt.</p>
-          <a href="{{ route('login') }}"><button class="btn btn-danger roundpage px-4 py-2 mt-3" id="mainNav">Masuk Sekarang</button></a>
+          <p>Merawat Kearifan Budaya Batak Melalui Inovasi Digital. Satukan Generasi Penerus dalam Perjalanan Digitalisasi Modern Menuju Warisan Budaya yang Abadi.</p>
+          @auth
+            <a href="#about"><button class="btn btn-danger roundpage px-4 py-2 mt-3" id="mainNav">Jelajahi Sekarang</button></a>
+          @endauth
+          @guest
+            <a href="{{ route('login') }}"><button class="btn btn-danger roundpage px-4 py-2 mt-3" id="mainNav">Masuk Sekarang</button></a>
+          @endguest
         </div>
       </div>
       <div class="col-6 d-flex align-items-center">
@@ -33,9 +38,9 @@
       <div class="col-6 d-flex align-items-center">
         <div>
           <h1 class="fs-1 fw-bold text-white">
-            Dapatkan Informasi Tentang Budaya Batak Secara Lenkap.
+            Dapatkan Informasi Tentang Budaya Batak Secara Lengkap.
           </h1>
-          <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto explicabo distinctio sunt repellat expedita repudiandae porro accusamus accusantium perspiciatis! Necessitatibus debitis quos omnis tempore expedita natus consequuntur porro similique deserunt.</p>
+          <p class="text-white">Temukan Kebesaran Sejarah, Kekayaan Tradisi, dan Kedalaman Kearifan Lokal yang Membentuk Identitas yang Penuh Warna. Mari Bersama-sama Menggali Informasi yang Lenkap dan Mendalam tentang Warisan Budaya Batak.</p>
           <a href="{{ route('modul') }}"><button class="btn btn-light roundpage px-4 py-2 mt-3" id="mainNav">Lihat Modul</button></a>
         </div>
       </div>
@@ -56,12 +61,12 @@
       <div id="cardSlider" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner mt-5">
 
-          @foreach ($data as $d)
+          @foreach ($data as $index => $d)
           <a href="{{ route('isi_jadwal', $d->id) }}">
-            <div class="carousel-item active">
+            <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
               <div class="card mini-card mx-auto">
                 <!-- Mini card content for the first carousel item -->
-                <img src="{{ asset('storage') }}/{{ $d->gambar }}" class="card-img-top" alt="Image 1">
+                <img src="{{ asset('storage') }}/{{ $d->gambar }}" class="card-img-top" alt="Image {{ $index+1 }}">
                 <div class="card-body">
                   <h5 class="card-title">{{ $d->lokasi }}</h5>
                   <p class="card-text">By : {{ $d->user->nama_lengkap }}</p>

@@ -85,5 +85,4 @@ class LandingPageController extends Controller
 
         return redirect()->route('isi_modul', $request->modul_id)->with('success', 'Berhasil Komentar!');
     }   
-
 }
