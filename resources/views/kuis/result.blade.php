@@ -9,7 +9,7 @@
                 <h3 class="mb-4"><a href="{{ route('landingpage') }}"><i class="fa fa-arrow-left" aria-hidden="true"></i></a> Kuis Budaya<hr></h3>
                 <!--- batas -->
                 @auth
-                <h1 class="text-center">Skor Anda : <b>{{$hasil}}/100</b></h1>
+                <!-- <h1 class="text-center">Skor Anda : <b>{{$hasil}}/100</b></h1> -->
                 <h3 class="mt-3">Kerjakan Kuis Lainnya :</h3>
                 
                 <div class="row mb-5 row-cols-1 row-cols-md-4 g-4">
